@@ -14,6 +14,19 @@ const cors = require('cors')
 const GooglePassport = require('./config/config')
 
 
+
+app.use(
+    cors({
+    origin: ['http://localhost:3000','https://foodied-restaurante-nacho-fernandezs-projects.vercel.app'],
+    methods: 'GET, POST, PUT, DELETE',
+    credentials: true
+    })
+);
+app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', 'https://foodied-restaurante-nacho-fernandezs-projects.vercel.app');
+    next();
+  });
+
 //Configuración del formulario
 app.use(express.json())
 app.use(express.urlencoded({extended:false}))
@@ -33,13 +46,6 @@ app.use(passport.session({
     saveUninitialized:true
 }))
 
-app.use(
-    cors({
-    origin: ['http://localhost:3000','https://foodied-restaurante-nacho-fernandezs-projects.vercel.app'],
-    methods: 'GET, POST, PUT, DELETE',
-    credentials: true
-    })
-);
 
 /* PUERTO */
 const PUERTO = process.env.PUERTO
