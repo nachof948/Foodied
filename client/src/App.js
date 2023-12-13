@@ -9,7 +9,9 @@ function App() {
   useEffect(() => {
     const obtenerUsuario = async () => {
       try {
-        const response = await axios.get('https://foodied-server-nacho-fernandezs-projects.vercel.app/auth/exito');
+        const response = await axios.get('https://foodied-server-nacho-fernandezs-projects.vercel.app/auth/exito', {
+          withCredentials: true
+        });
         
         if (response.status === 200) {
           if (response.data && response.data.user) {
