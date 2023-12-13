@@ -23,7 +23,7 @@ app.use(express.urlencoded({extended:false}))
 
 app.use(
     cors({
-    origin: ['https://foodied-restaurante.vercel.app/'],
+    origin: 'https://foodied-restaurante.vercel.app',
     credentials: true
     })
 );
