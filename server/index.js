@@ -17,13 +17,13 @@ const GooglePassport = require('./config/config')
 
 app.use(
     cors({
-    origin: ['http://localhost:3000','https://foodied-restaurante-nacho-fernandezs-projects.vercel.app'],
+    origin: ['http://localhost:3000','https://foodied-restaurante.vercel.app'],
     methods: 'GET, POST, PUT, DELETE',
     credentials: true
     })
 );
 app.use((req, res, next) => {
-    res.setHeader('Access-Control-Allow-Origin', 'https://foodied-restaurante-nacho-fernandezs-projects.vercel.app');
+    res.setHeader('Access-Control-Allow-Origin', 'https://foodied-restaurante.vercel.app');
     next();
   });
 
