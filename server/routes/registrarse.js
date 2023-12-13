@@ -18,14 +18,14 @@ router.get('/exito', (req, res) => {
 
 router.get('/logout', (req, res) => {
     req.logout()
-    res.redirect('http://localhost:3000/')
+    res.redirect('https://foodied-restaurante-nacho-fernandezs-projects.vercel.app/')
 })
 
 router.get('/google', passport.authenticate('google', {
     scope: ['profile']
 }));
 router.get('/google/callback', passport.authenticate('google', {
-    successRedirect: 'http://localhost:3000/comidas/all',
+    successRedirect: 'https://foodied-restaurante-nacho-fernandezs-projects.vercel.app/comidas/all',
     failureRedirect: '/error' // Opcional: Redirección en caso de fallo en la autenticación
 }));
 
