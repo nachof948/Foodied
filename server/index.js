@@ -51,6 +51,8 @@ app.use('/', producto)
 app.use('/auth', registrarse)
 app.use('/compras', carrito)
 app.use('/', compra)
+
+
 /* CONEXION A LA BASE DE DATOS */
 const iniciar = async ()=>{
     try{
