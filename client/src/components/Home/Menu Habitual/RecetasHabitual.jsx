@@ -11,7 +11,7 @@ const RecetasHabitual = ({userGoogle}) => {
   const [menuHabitual,setMenuHabitual] = useState([])
   useEffect(()=>{AOS.init()},[])
   useEffect(()=>{
-    axios.get('/home')
+    axios.get('https://foodied-server.vercel.app/home')
     .then((response=>{
       setMenuHabitual(response.data.comidas)
     }))
