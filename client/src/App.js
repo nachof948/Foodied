@@ -12,7 +12,7 @@ function App() {
         const response = await axios.get('https://foodied-server-nacho-fernandezs-projects.vercel.app/auth/exito', {
           withCredentials: true
         });
-        
+        console.log('El usuario es:', response.data)
         if (response.status === 200) {
           if (response.data && response.data.user) {
             setUserGoogle(response.data.user); // Usuario autenticado
