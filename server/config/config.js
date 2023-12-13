@@ -6,7 +6,7 @@ require('dotenv').config()
 passport.use(new GoogleStrategy({
     clientID:process.env.GOOGLE_CLIENT_ID,
     clientSecret:process.env.GOOGLE_CLIENT_SECRET,
-    callbackURL:"https://foodied-server-nacho-fernandezs-projects.vercel.app/auth/google/callback",
+    callbackURL:"https://foodied-server.vercel.app/auth/google/callback",
     },
     async (accessToken, refreshToken, profile, done) =>{
         try{
