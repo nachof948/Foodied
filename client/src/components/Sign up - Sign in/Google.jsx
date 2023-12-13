@@ -3,7 +3,7 @@ import React from 'react';
 const Google = () => {
   
   const googleAuth = ()=>{
-    window.open("https://foodied-server-nacho-fernandezs-projects.vercel.app/auth/google","_self")
+    window.open("https://foodied-server.vercel.app/auth/google","_self")
   }
 
   return(
