@@ -13,7 +13,7 @@ const RecetasEspecial = ({userGoogle}) => {
 
   useEffect(()=>{AOS.init()},[])
 	useEffect(()=>{
-		axios.get('https://foodied-server-nacho-fernandezs-projects.vercel.app/home')
+		axios.get('https://foodied-server.vercel.app/home')
 		.then((response=>{
       setMenuEspecial(response.data.comidas)
 		}))
