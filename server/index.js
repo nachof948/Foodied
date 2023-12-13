@@ -15,17 +15,18 @@ const GooglePassport = require('./config/config')
 
 
 
+
+//Configuración del formulario
+app.use(express.json())
+app.use(express.urlencoded({extended:false}))
+
+
 app.use(
     cors({
     origin: ['https://foodied-restaurante.vercel.app'],
     credentials: true
     })
 );
-
-
-//Configuración del formulario
-app.use(express.json())
-app.use(express.urlencoded({extended:false}))
 
 
 /* UTILIZAR COOKIES */
