@@ -1,0 +1,227 @@
+/* PRODUCTO */
+.section-producto {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    padding-top: 10rem;
+}
+.titulo-producto{
+    font-size: 3rem;
+}
+.imagen-producto img{
+    border-radius: 50%;
+    width: 35rem;
+}
+.producto-textos {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+    width: 35%
+}
+.ventas-rating{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+.rating{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.rating p{
+    font-size: 1.2rem;
+    color: rgb(132,183,78);
+}
+.estrella-producto{
+    width: 1.5rem;
+    height: 1.5rem;
+}
+.descripcion-extensa-producto{
+    width: 100%;
+    line-height: 1.4rem;
+    color: rgb(139, 143, 144);
+}
+.ventas-rating p{
+    font-size: 1.1rem;
+}
+.ventas-rating span{
+    margin-right: 0.5rem;
+    font-size: 1.1rem;
+    color: rgb(139, 143, 144);
+}
+
+.precio-producto{
+    font-weight: 700;
+    font-size: 2.3rem;
+    color: rgb(132,183,78);
+    margin: 0;
+}
+.comprar-producto{
+    background-color: var(--verde--oscuro);
+    border: 1px solid var(--verde--oscuro);
+    padding: 1.4rem 3rem;
+    color: white;
+    font-size: 1.2rem;
+    text-wrap: nowrap;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 250ms ease;
+}
+.comprar-producto:hover{
+    background-color: var(--blanco);
+    color: var(--verde--oscuro);
+}
+.contenedor-spinner{
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.spinner {
+    --size: 30px;
+    --first-block-clr:rgb(132,183,78);
+    --second-block-clr: rgb(132,183,78);
+    --clr: #111;
+    width: 100px;
+    height: 100px;
+    position: relative;
+}
+
+.spinner::after,.spinner::before {
+    box-sizing: border-box;
+    position: absolute;
+    content: "";
+    width: var(--size);
+    height: var(--size);
+    top: 50%;
+    animation: up 2.4s cubic-bezier(0, 0, 0.24, 1.21) infinite;
+    left: 50%;
+    background: var(--first-block-clr);
+}
+.spinner::after {
+    background: var(--second-block-clr);
+    top: calc(50% - var(--size));
+    left: calc(50% - var(--size));
+    animation: down 2.4s cubic-bezier(0, 0, 0.24, 1.21) infinite;
+}
+@keyframes down {
+    0%, 100% {
+    transform: none;
+    }
+    25% {
+    transform: translateX(100%);
+    }
+    50% {
+    transform: translateX(100%) translateY(100%);
+    }
+    75% {
+    transform: translateY(100%);
+    }
+}
+
+@keyframes up {
+    0%, 100% {
+    transform: none;
+    }
+    25% {
+    transform: translateX(-100%);
+    }
+    50% {
+    transform: translateX(-100%) translateY(-100%);
+    }
+    75% {
+    transform: translateY(-100%);
+    }
+}
+
+/* --------RESPONSIVE---------------*/
+
+@media (max-width:1400px) {
+    .imagen-producto img{
+        width: 32rem;
+    }
+    .titulo-producto{
+        font-size: 2.5rem;
+    }
+    .producto-textos {
+        gap: 1rem;
+    }
+    .comprar-producto{
+        padding: 1rem 2.5rem;
+        font-size: 1.2rem;
+    }
+}
+@media (max-width:1200px) {
+    .imagen-producto img{
+        width: 28rem;
+    }
+    .titulo-producto{
+        font-size: 2rem;
+    }
+    .precio-producto{
+        font-size: 1.8rem;
+    }
+    .descripcion-extensa-producto{
+        font-size: 0.9rem;
+    }
+}
+@media (max-width:1024px) {
+    .section-producto {
+        flex-direction: column;
+        gap: 4rem;
+        padding-top: 10rem;
+    }
+    .producto-textos {
+        align-items: center;
+        width: 80%;
+        text-align: center;
+    }
+}
+@media (max-width:500px) {
+    .imagen-producto img{
+        width: 23rem;
+    }
+    .producto-textos {
+        width: 90%;
+    }
+    .precio-producto{
+        font-size: 1.5rem;
+    }
+    .descripcion-extensa-producto{
+        font-size: 0.8rem;
+    }
+}
+@media (max-width:400px) {
+    .imagen-producto img{
+        width: 20rem;
+    }
+    .titulo-producto{
+        font-size: 1.7rem;
+    }
+    .estrella-producto{
+        width: 1rem;
+        height: 1rem;
+    }
+    .ventas-rating p{
+        font-size: 0.9rem;
+    }
+    .ventas-rating span{
+        font-size: 1rem;
+    }
+    .producto-textos {
+        width: 90%;
+    }
+    .precio-producto{
+        font-size: 1.5rem;
+    }
+    .descripcion-extensa-producto{
+        font-size: 0.8rem;
+    }
+}
+@media (max-width:350px) {
+    .imagen-producto img{
+        width: 18rem;
+    }
+}

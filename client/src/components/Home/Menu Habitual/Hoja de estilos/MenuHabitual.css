@@ -1,0 +1,463 @@
+/* MENU HABITUAL */
+.comida-habitual{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding: 0rem 0rem 2rem;
+}
+.contenedor-comida-habitual{
+    width: 85vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    gap: 8rem;
+    padding: 0rem 0rem 2rem;
+}
+.comidas{
+    display: grid;
+    grid-template-columns: repeat(3, 3fr);
+    flex-wrap: wrap;
+    gap: 5.5rem;
+    margin-top: 1rem;
+}
+.titulos-habitual{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 5rem 0rem -4rem ;
+}
+.titulos-habitual h2{
+    font-size: 3.5rem;
+}
+.titulos-habitual p{
+    font-size: 1.3rem;
+    width: 65%;
+    color: grey;
+    text-align: center;
+    margin-top: 1rem;
+}
+.tarjeta-habitual{
+    background-color: white;
+    border-radius: 25px;
+    width: 30rem;
+    height: 27rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    box-shadow: 0px 0px 10px rgb(209, 205, 205);
+    margin-top: 9.5rem;
+    transition: all 250ms;
+}
+.tarjeta-habitual:hover{
+    box-shadow: 0px 0px 10px var(--verde--oscuro);
+}
+.tarjeta-habitual-img{
+    width: 18.5rem;
+    border-radius: 50%;
+    border: 0.9rem solid var(--verde--oscuro);
+    transform: translateY(-60%);
+}
+.tarjeta-textos-habitual{
+    transform: translateY(-75%);
+    padding-bottom: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.tarjeta-textos-habitual h2{
+    font-size: 2rem;
+    width: 80%;
+    margin: 0rem;
+}
+.tarjeta-textos-habitual p{
+    color: var(--gris);
+    width: 80%;
+    font-size: 1.2rem;
+}
+.habitual-precio p{
+    font-size: 1.2rem;
+}
+.opciones-comprar-habitual{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 0.5rem;
+    position: absolute;
+    transform: translate(45%,-175%);
+}
+.opciones-comprar-habitual p{
+    border: 1px solid var(--negro);
+    border-radius: 20px;
+    font-size: 1.3rem;
+    padding: 0.5rem 1rem;
+    font-weight: 700;
+    color: var(--negro);
+    user-select: none;
+}
+.opciones-comprar-habitual a{
+    border: 1px solid var(--verde--oscuro);
+    border-radius: 20px;
+    padding: 0.7rem 1rem;
+    white-space: nowrap;
+    font-size: 1.1rem;
+    font-weight: 400;
+    background-color: var(--verde--oscuro);
+    color: var(--blanco);
+    cursor: pointer;
+    transition: all 250ms ease;
+}
+.opciones-comprar-habitual a:hover{
+    border: 1px solid var(--verde--oscuro);
+    background-color: var(--blanco);
+    color: var(--verde--oscuro);
+    cursor: pointer;
+}
+.estrellasHabitual{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 1rem 0rem;
+}
+.estrellasHabitual img{
+    width: 1.8rem;
+    height: 1.8rem;
+}
+.opciones-comprar-habitual button{
+    border: 1px solid var(--verde--oscuro);
+    border-radius: 20px;
+    padding: 0.5rem 0.8rem;
+    white-space: nowrap;
+    font-size: 1.1rem;
+    font-weight: 400;
+    background-color: var(--verde--oscuro);
+    color: var(--blanco);
+    cursor: pointer;
+    transition: all 250ms ease;
+}
+.opciones-comprar-habitual button:hover{
+    border: 1px solid var(--verde--oscuro);
+    background-color: var(--blanco);
+    color: var(--verde--oscuro);
+    cursor: pointer;
+}
+
+
+/* ==== COMPUTADORA O LAPTOP====== */
+@media (max-width:1750px) {
+    .tarjeta-habitual{
+        width: 26rem;
+        height: 27rem;
+    }
+    .tarjeta-habitual-img{
+        width: 15.5rem;
+    }
+    .tarjeta-textos-habitual h2{
+        font-size: 1.8rem;
+        width: 90%;
+    }
+    .tarjeta-textos-habitual p{
+        width: 90%;
+        font-size: 1rem;
+    }
+    .opciones-comprar-habitual p{
+        font-size: 1.3rem;
+    }
+    .tarjeta-textos-habitual{
+        transform: translateY(-50%);
+    }
+    .opciones-comprar-habitual{
+        transform: translate(35%,-175%);
+    }
+}
+@media (max-width:1650px) {
+    .tarjeta-habitual{
+        width: 24rem;
+        height: 27rem;
+    }
+    .tarjeta-habitual-img{
+        width: 15rem;
+    }
+    .tarjeta-textos-habitual h2{
+        font-size: 1.8rem;
+        width: 90%;
+    }
+    .tarjeta-textos-habitual p{
+        width: 90%;
+        font-size: 1rem;
+    }
+    .opciones-comprar-habitual p{
+        font-size: 1.3rem;
+    }
+    .opciones-comprar-habitual{
+        transform: translate(26%,-175%);
+    }
+}
+@media (max-width:1550px) {
+    .tarjeta-habitual{
+        width: 23rem;
+        height: 27rem;
+    }
+    .tarjeta-habitual-img{
+        width: 15rem;
+    }
+    .tarjeta-textos-habitual h2{
+        font-size: 1.8rem;
+        width: 90%;
+    }
+    .tarjeta-textos-habitual p{
+        width: 90%;
+        font-size: 1rem;
+    }
+    .opciones-comprar-habitual p{
+        font-size: 1.3rem;
+    }
+    .opciones-comprar-habitual{
+        transform: translate(23%,-175%);
+    }
+}
+@media (max-width:1500px) {
+    .tarjeta-habitual{
+        width: 21.5rem;
+        height: 26rem;
+    }
+    .tarjeta-habitual-img{
+        width: 14rem;
+    }
+    .tarjeta-textos-habitual{
+        transform: translateY(-45%);
+    }
+    .tarjeta-textos-habitual h2{
+        font-size: 1.8rem;
+        width: 90%;
+    }
+    .tarjeta-textos-habitual p{
+        width: 90%;
+        font-size: 1rem;
+    }
+    .opciones-comprar-habitual p{
+        font-size: 1.3rem;
+    }
+    .opciones-comprar-habitual{
+        transform: translate(20%,-175%);
+    }
+}
+@media (max-width:1400px) {
+    .tarjeta-habitual{
+        width: 21rem;
+        height: 25rem;
+    }
+    .tarjeta-habitual-img{
+        width: 13rem;
+    }
+    .tarjeta-textos-habitual{
+        transform: translateY(-45%);
+    }
+    .tarjeta-textos-habitual h2{
+        font-size: 1.6rem;
+        width: 90%;
+    }
+    .tarjeta-textos-habitual p{
+        width: 90%;
+        font-size: 1rem;
+    }
+    .opciones-comprar-habitual p{
+        font-size: 1.3rem;
+    }
+    .opciones-comprar-habitual{
+        margin-top: 1rem;
+    }
+}
+@media (max-width:1300px) {
+    .contenedor-comida-habitual{
+        padding: 0rem 0rem 2rem;
+    }
+    .comidas{
+        margin-top: 0rem;
+    }
+    .swiper-slide-habitual{
+        gap: 1rem; 
+        padding-top: 0.5rem;
+    }
+    .tarjeta-habitual{
+        width: 20.5rem;
+    }
+    .opciones-comprar-habitual{
+        transform: translate(15%,-175%);
+    }
+}
+@media (max-width:1200px) {
+    .tarjeta-habitual{
+        width: 18.5rem;
+        height: 23.5rem;
+    }
+    .tarjeta-habitual-img{
+        width: 12rem;
+    }
+    .tarjeta-textos-habitual h2{
+        font-size: 1.4rem;
+    }
+    .estrellasHabitual img{
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+    .opciones-comprar-habitual{
+        transform: translate(8%,-175%);
+    }
+}
+@media (max-width:1100px) {
+    .tarjeta-habitual{
+        width: 17.45rem;
+        height: 23rem;
+    }
+    .tarjeta-habitual-img{
+        width: 11.5rem;
+    }
+    .tarjeta-textos-habitual h2{
+        font-size: 1.3rem;
+    }
+    .estrellasHabitual img{
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+    .opciones-comprar-habitual a{
+        padding: 0.5rem 0.5rem;
+        font-size: 1rem;
+    }
+    .opciones-comprar-habitual p{
+        font-size: 1.1rem;
+    }
+    .tarjeta-textos-habitual{
+        transform: translateY(-40%);
+    }
+}
+/* ====FIN COMPUTADORA O LAPTOP====== */
+
+/* ====TABLET===== */
+@media (max-width:1024px) {
+    .titulos-habitual h2{
+        font-size: 2.8rem;
+        text-align: center;
+    }
+    .titulos-habitual p{
+        font-size: 1.2rem;
+        width: 85%;
+    }
+    .tarjeta-habitual{
+        width: 25rem;
+        height: 26rem;
+    }
+    .tarjeta-habitual-img{
+        width: 14rem;
+        border: 0.7rem solid var(--verde--oscuro);
+    }
+    .tarjeta-textos-habitual h2{
+        font-size: 1.8rem;
+    }
+    .tarjeta-textos-habitual p{
+        font-size: 1.2rem;
+    }
+    .estrellasHabitual img{
+        width: 1.7rem;
+        height: 1.7rem;
+    }
+    .opciones-comprar-habitual a{
+        padding: 0.5rem 0.5rem;
+        font-size: 1rem;
+    }
+    .opciones-comprar-habitual p{
+        font-size: 1.1rem;
+    }
+    .tarjeta-textos-habitual{
+        transform: translateY(-50%);
+    }
+    .comidas{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 4rem;
+    }
+    .opciones-comprar-habitual{
+        transform: translate(32%,-175%);
+    }
+}
+/* ====FIN TABLET===== */
+/* ===CELULAR=== */
+@media (max-width:768px) {
+    .contenedor-comida-habitual{
+        width: 95vw;
+    }
+    .titulos-habitual h2{
+        font-size: 2.6rem
+    }
+    .titulos-habitual p{
+        font-size: 1.2rem;
+        width: 80%;
+    }
+}
+@media (max-width:500px) {
+    .titulos-habitual h2{
+        font-size: 2.2rem
+    }
+    .titulos-habitual p{
+        font-size: 1rem;
+        width: 90%;
+    }
+    .tarjeta-habitual {
+        width: 24rem;
+        height: 26rem;
+    }
+}
+@media (max-width:420px) {
+    .tarjeta-habitual {
+        width: 21.5rem;
+        height: 24rem;
+    }
+    .tarjeta-textos-habitual h2{
+        font-size: 1.6rem;
+    }
+    .tarjeta-textos-habitual p{
+        font-size: 1rem;
+    }
+    .opciones-comprar-habitual{
+        transform: translate(20%,-175%);
+    }
+}
+
+
+@media (max-width:360px) {
+    .titulos-habitual h2{
+        font-size: 1.8rem;
+    }
+    .titulos-habitual p{
+        font-size: 0.8rem;
+        width: 100%;
+    }
+    .tarjeta-habitual{
+        width: 19rem;
+        height: 22rem;
+    }
+    .tarjeta-textos-habitual h2{
+        font-size: 1.4rem;
+    }
+    .tarjeta-textos-habitual p{
+        font-size: 0.8rem;
+    }
+    .tarjeta-textos-habitual{
+        transform: translateY(-70%);
+    }
+    .opciones-comprar-habitual{
+        transform: translate(12%,-175%);
+    }
+    .tarjeta-habitual-img{
+        width: 13.5rem;
+    }
+}
+/* ===FIN CELULAR=== */
+
+/* FIN MEDIA QUERIES HABITUAL */

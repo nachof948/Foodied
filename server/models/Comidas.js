@@ -1,0 +1,51 @@
+const mongoose = require('mongoose')
+
+const comidasSchema = new mongoose.Schema({
+    nombre:{
+        type:String,
+        required:[true, 'nombre del producto']
+    },
+    descripcion:{
+        type:String,
+        required:[true, 'descripcion del producto']
+    },
+    precio:{
+        type:Number,
+        required:[true,'precio del producto']
+    },
+    estrellas:{
+        type:Number,
+        required:[true,'estrellas del producto']
+    },
+    vegano:{
+        type:Boolean,
+        required:[true,'tipo de producto']
+    },
+    categoria:{
+        type:String,
+        required:[true,'categoria del producto']
+    },
+    imgUrl:{
+        type:String,
+        required:[true,'imagen del producto']
+    },
+    enCarrito:{
+        type:Boolean,
+        required:[true,'producto en el carrito']
+    },
+    rating:{
+        type:String,
+        required:[true,'rating del producto']
+    },
+    vendidos:{
+        type:Number,
+        required:[true, 'cantidad de ventas del producto']
+    },
+    descripcionDetallada:{
+        type:String,
+        required:[true,'descripcion detallada del producto']
+    }
+})
+
+const Comidas = mongoose.model('Comidas', comidasSchema)
+module.exports = Comidas

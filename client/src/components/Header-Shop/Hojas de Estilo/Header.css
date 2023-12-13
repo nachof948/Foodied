@@ -1,0 +1,93 @@
+/* VARIABLES */
+:root{
+    --verde--oscuro: rgb(132,183,78);
+    --verde-claro:rgb(182,215,146);
+    --verde-muy-claro:rgb(229,241,217);
+    --negro: #010101;
+    --blanco: rgb(249,250,252);
+    --gris:rgb(139, 143, 144);
+}
+a{
+    text-decoration: none;
+    color: var(--negro);
+}
+/* HEADER */
+header{
+    width: 100vw;
+    padding: 1rem 0rem;
+    position: fixed;
+    z-index: 20;
+}
+.contenedor-header{
+    width: 85vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+}
+.header-verde{
+    background-color: var(--verde--oscuro);
+}
+/* LOGO */
+.empresa{
+    font-size: 2rem;
+    font-weight: 700;
+}
+/* NAVBAR */
+nav{
+    display: flex;
+    align-items: center;
+    gap: 6rem;
+}
+nav a{
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: all 200ms ease;
+}
+nav a:hover{
+    color: var(--verde-claro);
+}
+
+/* HEADER-DERECHA */
+.header-derecha{
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    position: relative;
+}
+
+/* HEADER ICONOS */
+.header-iconos{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.header-iconos a{
+    font-size: 1.2rem;
+    margin-left: 0.8rem;
+    background-color: var(--blanco);
+    border-radius: 50%;
+    padding: 0.5rem 0.6rem;
+    cursor: pointer;
+    transition: all 200ms ease;
+}
+.header-iconos a:hover{
+    color: var(--verde-claro);
+}
+
+/* REGISTRARSE */
+.registrarse {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 1.3rem;
+    width: fit-content;
+    border: none;
+    background-color: var(--blanco);
+    padding: 0.7rem 1rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 200ms ease;
+}
+.registrarse:hover{
+    color: var(--verde-claro);
+}

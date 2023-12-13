@@ -1,0 +1,192 @@
+/* SHOP */
+.shop{
+    display: flex;
+    width: 85vw;
+    flex-direction: column;
+    align-items: center;
+    height: fit-content;
+    gap: 3rem;
+    margin-top: 4rem;
+}
+.shop h1{
+    color: #010101;
+    font-size: 3.5rem;
+    margin: 6rem 0rem 0rem 0rem;
+}
+.titulos{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 3.5rem;
+    width: 100%;
+    margin: 0;
+}
+.titulos a{
+    font-size: 1.4rem;
+    color: grey;
+    text-align: center;
+    margin-bottom: -1rem;
+    text-wrap: nowrap;
+}
+.titulos a:hover{
+    color: rgb(132,183,78);
+}
+.comidas-shop {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    row-gap: 10rem;
+    column-gap: 3rem;
+    margin-top: 10rem;
+}
+.tarjeta-shop{
+    margin-top: 7rem;
+    background-color: white;
+    border-radius: 25px;
+    width: 23rem;
+    height: 23rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    box-shadow: 0px 0px 10px rgb(209, 205, 205);
+}
+.tarjeta-shop-textos{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 0rem 1rem;
+    gap: 0.5rem;
+    align-items: center;
+    text-align: center;
+    margin-top: 10rem;
+}
+.tarjeta-shop-textos p{
+    color: gray;
+}
+.opciones-comprar{
+    margin-top: 1rem;
+}
+.opciones-comprar p{
+    color: #010101;
+    border: 2px solid;
+}
+.tarjeta-shop img{
+    width: 14rem;
+    border-radius: 50%;
+    border: 0.9rem solid var(--verde--oscuro);
+    position: absolute;
+    bottom: 15rem;
+    left: 3.8em;
+}
+.spinner {
+    --size: 30px;
+    --first-block-clr:rgb(132,183,78);
+    --second-block-clr: rgb(132,183,78);
+    --clr: #111;
+    width: 100px;
+    height: 100px;
+    position: relative;
+   }
+   
+   .spinner::after,.spinner::before {
+    box-sizing: border-box;
+    position: absolute;
+    content: "";
+    width: var(--size);
+    height: var(--size);
+    top: 50%;
+    animation: up 2.4s cubic-bezier(0, 0, 0.24, 1.21) infinite;
+    left: 50%;
+    background: var(--first-block-clr);
+   }
+   
+   .spinner::after {
+    background: var(--second-block-clr);
+    top: calc(50% - var(--size));
+    left: calc(50% - var(--size));
+    animation: down 2.4s cubic-bezier(0, 0, 0.24, 1.21) infinite;
+   }
+   
+   @keyframes down {
+    0%, 100% {
+     transform: none;
+    }
+   
+    25% {
+     transform: translateX(100%);
+    }
+   
+    50% {
+     transform: translateX(100%) translateY(100%);
+    }
+   
+    75% {
+     transform: translateY(100%);
+    }
+   }
+   
+   @keyframes up {
+    0%, 100% {
+     transform: none;
+    }
+   
+    25% {
+     transform: translateX(-100%);
+    }
+   
+    50% {
+     transform: translateX(-100%) translateY(-100%);
+    }
+   
+    75% {
+     transform: translateY(-100%);
+    }
+   }
+
+
+
+@media (max-width:1024px) {
+    .comidas-shop{
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}
+@media (max-width:800px) {
+    .titulos{
+        gap: 2rem;
+    }
+    .titulos a{
+        font-size: 1.2rem;
+    }
+    .shop h1{
+        font-size: 3rem;
+    }
+    .comidas-shop{
+        margin-top: 6rem;
+    }
+}
+@media (max-width:540px) {
+    .titulos{
+        gap: 1.5rem;
+    }
+    .titulos a{
+        font-size: 1rem;
+    }
+    .shop h1{
+        font-size: 2.4rem;
+    }
+}
+@media (max-width:435px) {
+    .shop h1{
+        font-size: 1.8rem;
+    }
+}
+@media (max-width:330px) {
+    .shop h1{
+        font-size: 1.6rem;
+    }
+}
