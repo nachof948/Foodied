@@ -35,7 +35,7 @@ app.use(passport.session({
 
 app.use(
     cors({
-    origin: ['http://localhost:3000','https://foodied-restaurante.vercel.app'],
+    origin: ['http://localhost:3000','https://foodied-restaurante-nacho-fernandezs-projects.vercel.app'],
     methods: 'GET, POST, PUT, DELETE',
     credentials: true
     })
