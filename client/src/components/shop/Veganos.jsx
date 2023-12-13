@@ -14,7 +14,7 @@ const Veganos = ({userGoogle}) => {
 
   const [Veganos, setVeganos] = useState([])
   useEffect(()=>{
-    axios.get('/comidas/Veganos')
+    axios.get('https://foodied-server-nacho-fernandezs-projects.vercel.app/comidas/Veganos')
     .then((response)=>{
       const delay = setTimeout(() => {
         setLoading(false); // Actualiza el estado de carga después del tiempo de espera

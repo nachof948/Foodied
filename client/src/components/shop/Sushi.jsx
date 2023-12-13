@@ -14,7 +14,7 @@ const Sushi = ({userGoogle}) => {
 
   const [Sushi, setSushi] = useState([])
   useEffect(()=>{
-    axios.get('/comidas/Sushi')
+    axios.get('https://foodied-server-nacho-fernandezs-projects.vercel.app/comidas/Sushi')
     .then((response)=>{
       const delay = setTimeout(() => {
         setLoading(false); // Actualiza el estado de carga después del tiempo de espera

@@ -13,7 +13,7 @@ const Carnes = ({userGoogle}) => {
   const [loading, setLoading] = useState(true)
   const [Carnes, setCarnes] = useState([])
   useEffect(()=>{
-    axios.get('/comidas/carnes')
+    axios.get('https://foodied-server-nacho-fernandezs-projects.vercel.app/comidas/carnes')
     .then((response)=>{
       const delay = setTimeout(() => {
         setLoading(false); // Actualiza el estado de carga después del tiempo de espera

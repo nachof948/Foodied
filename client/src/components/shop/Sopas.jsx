@@ -13,7 +13,7 @@ const Sopas = ({userGoogle}) => {
 
   const [Sopas, setSopas] = useState([])
   useEffect(()=>{
-    axios.get('/comidas/Sopas')
+    axios.get('https://foodied-server-nacho-fernandezs-projects.vercel.app/comidas/Sopas')
     .then((response)=>{
       const delay = setTimeout(() => {
         setLoading(false); // Actualiza el estado de carga después del tiempo de espera

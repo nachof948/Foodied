@@ -13,7 +13,7 @@ const Ensaladas = ({userGoogle}) => {
 
   const [Ensaladas, setEnsaladas] = useState([])
   useEffect(()=>{
-    axios.get('/comidas/Ensaladas')
+    axios.get('https://foodied-server-nacho-fernandezs-projects.vercel.app/comidas/Ensaladas')
     .then((response)=>{
       const delay = setTimeout(() => {
         setLoading(false); // Actualiza el estado de carga después del tiempo de espera
