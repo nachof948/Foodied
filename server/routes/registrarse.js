@@ -7,19 +7,14 @@ router.get('/error', (req, res) => {
     res.status(401).json({message:"Error al registarse"})
 })
 router.get('/exito', (req, res) => {
-    const allowedOrigins = ['https://foodied-restaurante.vercel.app/', 'https://foodied-restaurante.vercel.app/auth/registrarse'];
-    const origin = req.headers.origin;
-    if (allowedOrigins.includes(origin)) {
-        res.header('Access-Control-Allow-Origin', origin);
-    }
     if(req.user){
         res.status(200).json({
             success: true,
-            message:"Exito al registrarse",
+            message:"Exito al registrase",
             user:req.user,
-        });
+        })
     }
-});
+})
 
 router.get('/logout', (req, res) => {
     req.logout()
