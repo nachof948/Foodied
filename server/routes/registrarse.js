@@ -7,6 +7,7 @@ router.get('/error', (req, res) => {
     res.status(401).json({message:"Error al registarse"})
 })
 router.get('/exito', (req, res) => {
+    res.header('Access-Control-Allow-Origin', '*')
     if(req.user){
         res.status(200).json({
             success: true,
