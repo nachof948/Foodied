@@ -22,7 +22,12 @@ app.use(express.json())
 app.use(express.urlencoded({extended:false}))
 
 
-app.use(cors());
+app.use(
+    cors({
+    origin: ['https://foodied-restaurante.vercel.app/','https://foodied-restaurante.vercel.app/auth/registrarse'],
+    credentials: true
+    })
+);
 
 
 /* UTILIZAR COOKIES */
