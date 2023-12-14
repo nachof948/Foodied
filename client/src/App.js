@@ -9,24 +9,33 @@ function App() {
   useEffect(() => {
     const obtenerUsuario = async () => {
       try {
-        const response = await axios.get('https://foodied-server.vercel.app/auth/exito');
+        const response = await axios.get('https://foodied-server.vercel.app/auth/exito',{
+          headers: {
+            'Access-Control-Allow-Origin': '*',
+          },
+        });
         console.log('El usuario es:', response.data)
         if (response.status === 200) {
-          if (response.data && response.data.user) {
-            setUserGoogle(response.data.user); // Usuario autenticado
+          if (response.data?.user) {
+            setUserGoogle(response.data.user);
           } else {
-            setUserGoogle(null); // Usuario no autenticado
+            setUserGoogle(null);
           }
         } else {
           throw new Error('Error en la autentificación');
         }
       } catch (err) {
-        console.log(err);
+        console.error(err);
+        // Accede a la información específica del error
+        if (err instanceof AxiosError) {
+          console.error(`Error de Axios: ${err.code}`);
+          console.error(err.message);
+        }
       }
     };
   
     obtenerUsuario();
-  }, []);
+  }, ['https://foodied-server.vercel.app/auth/exito']);
   return (
   <div className="App">
       <Routes>
