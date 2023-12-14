@@ -3,16 +3,15 @@ import './App.css';
 import { Route, Routes} from 'react-router-dom'
 import { TodasLasComidas, Carnes, Ensaladas, Sushi, Pastas, Pizzas, Sopas, Dulces, Veganos, Hamburguesas, Home, Producto, Registrarme, Carrito, CompraRealizada} from './indice';
 import axios from 'axios';
+
 function App() {
   const [userGoogle, setUserGoogle] = useState(null)
   
   useEffect(() => {
     const obtenerUsuario = async () => {
       try {
-        const response = await axios.get('https://foodied-server.vercel.app/auth/exito',{
-          headers: {
-        'Access-Control-Allow-Origin': '*',
-      },
+        const response = await axios.get('https://foodied-server-nacho-fernandezs-projects.vercel.app/auth/exito',{
+          withCredentials: true
         });
         console.log('El usuario es:', response.data)
         if (response.status === 200) {
