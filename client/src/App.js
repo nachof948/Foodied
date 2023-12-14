@@ -30,7 +30,7 @@ function App() {
     };
   
     obtenerUsuario();
-  }, ['https://foodied-server.vercel.app/auth/exito']);
+  }, []);
   return (
   <div className="App">
       <Routes>
