@@ -24,7 +24,7 @@ app.use(express.urlencoded({extended:false}))
 
 app.use(
     cors({
-    origin: "https://foodied-restaurante.vercel.app/",
+    origin: ["https://foodied-restaurante.vercel.app/","https://foodied-restaurante-nacho-fernandezs-projects.vercel.app/"],
     credentials: true
     })
 );
