@@ -10,7 +10,7 @@ function App() {
   useEffect(() => {
     const obtenerUsuario = async () => {
       try {
-        const response = await axios.get('https://foodied-server-nacho-fernandezs-projects.vercel.app/auth/exito',{
+        const response = await axios.get('https://foodied-server.vercel.app/auth/exito',{
           withCredentials: true
         });
         console.log('El usuario es:', response.data)
