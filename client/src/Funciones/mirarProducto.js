@@ -1,6 +1,6 @@
 import axios from 'axios';
 const mirarProducto = (productId, navegar) => {
-  axios.post(`https://foodied-restaurante.vercel.app/producto/${productId}`)
+  axios.post(`https://foodied-server.vercel.app/producto/${productId}`)
     .then(() => {
       navegar(`/producto/${productId}`);
     })
