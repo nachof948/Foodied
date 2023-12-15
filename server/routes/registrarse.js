@@ -1,16 +1,6 @@
 const express = require('express')
 const router = express.Router()
 const passport = require('passport')
-const cors = require('cors');
-
-const app = express();
-app.use(
-    cors({
-        origin: 'https://foodied-restaurante.vercel.app',
-        methods: ['GET', 'POST', 'PUT', 'DELETE'],
-        credentials: true
-    })
-);
 
 
 router.get('/error', (req, res) => {
@@ -18,7 +8,6 @@ router.get('/error', (req, res) => {
 })
 router.get('/exito', (req, res) => {
     if(req.user){
-        res.header('Access-Control-Allow-Origin', 'https://foodied-restaurante.vercel.app');
         res.status(200).json({
             success: true,
             message: "Exito al registrarse",
