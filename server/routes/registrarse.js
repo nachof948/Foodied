@@ -8,13 +8,20 @@ router.get('/error', (req, res) => {
 })
 router.get('/exito', (req, res) => {
     if(req.user){
+        res.header('Access-Control-Allow-Origin', 'https://foodied-restaurante.vercel.app');
         res.status(200).json({
             success: true,
-            message:"Exito al registrase",
-            user:req.user,
-        })
+            message: "Exito al registrarse",
+            user: req.user,
+        });
+    } else {
+        res.status(401).json({
+            success: false,
+            message: "Usuario no autenticado",
+        });
     }
-})
+});
+
 
 router.get('/logout', (req, res) => {
     req.logout()
