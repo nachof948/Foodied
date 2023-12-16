@@ -24,7 +24,7 @@ const SignIn = () => {
       window.location.reload();
     }
     catch(err){
-      console.log(err)
+      console.log('Hay un problema', err)
     }
   }
   return(
