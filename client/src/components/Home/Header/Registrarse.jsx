@@ -1,6 +1,7 @@
 import React,{useState} from 'react';
-import { Link } from 'react-router-dom';
-const Registrarse = ({ userGoogle }) => {
+import { Link, useNavigate } from 'react-router-dom';
+const Registrarse = ({ usuarioLogueado, username }) => {
+  const navegar = useNavigate()
   const [logout, setLogout] = useState(false)
   
   const manejarLogout =()=>{
@@ -8,21 +9,22 @@ const Registrarse = ({ userGoogle }) => {
   }
 
   const cerrarSesion = ()=>{
-    window.open('https://foodied-server.vercel.app/auth/logout','_self')
+    localStorage.removeItem('token')
+    navegar('/')
+    window.location.reload();
   }
 
   return (
     <>
-      {!userGoogle && (
+      {!usuarioLogueado && (
         <div className='registrarse'>
-          <Link to={"/auth/registrarse"}>Registrarse</Link>
+          <Link to={"/auth/signup"}>Registrarse</Link>
         </div>
       )}
-      {userGoogle && (
+      {usuarioLogueado && (
         <div>
           <div className="registrarse" onClick={manejarLogout}>
-            <img className='avatar' src={userGoogle.image} alt="" />
-            <p>{userGoogle.username}</p>
+            <p>{username}</p>
           </div>
           {logout && 
             <div className='logout'>

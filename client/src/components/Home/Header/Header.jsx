@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { CarritoDeCompras, Logo, Lupa, MenuResponsive, NavBar, Registrarse } from '../../../indice';
 import './Hojas de Estilo/Header.css'
 
-const Header = ({userGoogle}) => {
+const Header = ({usuarioLogueado, username}) => {
   const [scroll, setScroll] = useState(false)
   useEffect(()=>{
     const manejarScroll = ()=>{
@@ -34,11 +34,11 @@ const Header = ({userGoogle}) => {
             <Lupa />
             <CarritoDeCompras />
           </div>
-          <Registrarse userGoogle={userGoogle} />
+          <Registrarse usuarioLogueado={usuarioLogueado} username={username} />
         </div>
       </div>
       <div >
-        <MenuResponsive userGoogle={userGoogle}/>
+        <MenuResponsive usuarioLogueado={usuarioLogueado} username={username}/>
       </div>
     </header>
   )

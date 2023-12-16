@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Elegirnos, Footer, Header, Hero, MenuEspecial, MenuHabitual, Opciones, SobreNosotros } from '../../indice';
 import './Hero/Hojas de estilo/Hero.css'
-const Home = ({ userGoogle }) => {
+const Home = ({ usuarioLogueado, username }) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -23,7 +23,7 @@ const Home = ({ userGoogle }) => {
         
       ) : (
         <>
-          <Header userGoogle={userGoogle} />
+          <Header usuarioLogueado={usuarioLogueado} username={username} />
           <Hero />
           <Opciones />
           <Elegirnos />
