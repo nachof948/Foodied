@@ -2,6 +2,7 @@ const UsuarioFormulario = require ('../models/Usuario-form')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 require('dotenv').config()
+
 const signup = async (req, res) =>{
     try{
         const {email, username, password} = req.body
