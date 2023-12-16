@@ -55,7 +55,7 @@ const TodasLasComidas = ({usuarioLogueado, username}) => {
                   </div>
                   <div className="opciones-comprar">
                         <p>${precio}</p>
-                        {userGoogle ? (
+                        {usuarioLogueado ? (
                           <button className='comprar-producto' onClick={()=>{agregarAlCarrito(_id, navegar)}}>Comprar Ahora</button>
                         ) : (
                           <a className='comprar-producto' href='/auth/registrarse'>Comprar Ahora</a>

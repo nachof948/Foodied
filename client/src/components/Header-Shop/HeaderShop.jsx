@@ -20,7 +20,7 @@ const HeaderShop = ({usuarioLogueado, username}) => {
         </div>
       </div>
       <div >
-        <MenuResponsive userGoogle={userGoogle}/>
+        <MenuResponsive usuarioLogueado={usuarioLogueado} username={username}/>
       </div>
     </header>
   )
