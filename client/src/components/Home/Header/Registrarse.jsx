@@ -24,6 +24,7 @@ const Registrarse = ({ usuarioLogueado, username }) => {
       {usuarioLogueado && (
         <div>
           <div className="registrarse" onClick={manejarLogout}>
+          <i class="bi bi-person"></i>
             <p>{username}</p>
           </div>
           {logout && 

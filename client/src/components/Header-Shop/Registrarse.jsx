@@ -18,6 +18,7 @@ const Registrarse = ({ usuarioLogueado, username}) => {
       {usuarioLogueado && (
         <div>
           <div className="registrarse">
+          <i class="bi bi-person"></i>
             <Link to={"/auth/registrarse"}>{username}</Link>
           </div>
           <div className="cerrar-sesion">
