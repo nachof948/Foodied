@@ -12,7 +12,7 @@ const SignUp = () => {
   
   const manejarRegistro = (event) => {
     event.preventDefault()
-    axios.post('/auth/signup',{email, username, password})
+    axios.post('https://foodied-server.vercel.app/auth/signup',{email, username, password})
     .then((response) =>{
       alert('Registration successful')
       setEmail('')

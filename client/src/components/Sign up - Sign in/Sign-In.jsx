@@ -12,7 +12,7 @@ const SignIn = () => {
   const manejarLogin = async(e)=>{
     e.preventDefault()
     try{
-      const response = await axios.post('/auth/login',{ username, password})
+      const response = await axios.post('https://foodied-server.vercel.app/auth/login',{ username, password})
       const token = response.data.token
       const nombreUsuario = response.data.username
       alert(`Bienvenido!!! ${nombreUsuario}`)
