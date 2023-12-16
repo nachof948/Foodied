@@ -12,16 +12,16 @@ const SignIn = () => {
   const manejarLogin = async(e)=>{
     e.preventDefault()
     try{
-      const response = await axios.post('https://foodied-server-nacho-fernandezs-projects.vercel.app/auth/login',{ username, password})
+      const response = await axios.post('https://foodied-server.vercel.app/auth/login',{ username, password})
       const token = response.data.token
       const nombreUsuario = response.data.username
       alert(`Bienvenido!!! ${nombreUsuario}`)
       setUsername('')
       setPassword('')
       navegar('/comidas/all')
-      window.location.reload();
       localStorage.setItem('token', token)
       localStorage.setItem('username', nombreUsuario)
+      window.location.reload();
     }
     catch(err){
       console.log(err)
