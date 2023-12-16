@@ -3,6 +3,20 @@ const router = express.Router()
 const passport = require('passport')
 
 
+
+
+const { signup, obtenerUsuarios, login} = require('../controllers/registro')
+
+/* REGISTRO */
+router.post('/signup', signup)
+router.get('/signup', obtenerUsuarios)
+
+/* LOGIN */
+router.post('/login', login)
+
+
+
+
 router.get('/error', (req, res) => {
     res.status(401).json({message:"Error al registarse"})
 })
