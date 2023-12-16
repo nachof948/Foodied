@@ -1,7 +1,7 @@
 import React from 'react';
 import { CarritoDeCompras, Logo, Lupa, NavBar, Registrarse, MenuResponsive } from '../../indice';
 import '../Home/Header/Hojas de Estilo/Header.css'
-const HeaderShop = ({userGoogle}) => {
+const HeaderShop = ({usuarioLogueado, username}) => {
   return(
     <header className='header-verde'>
       <div className="contenedor-header">
@@ -16,7 +16,7 @@ const HeaderShop = ({userGoogle}) => {
             <Lupa />
             <CarritoDeCompras />
           </div>
-          <Registrarse userGoogle={userGoogle} />
+          <Registrarse usuarioLogueado={usuarioLogueado} username={username} />
         </div>
       </div>
       <div >
