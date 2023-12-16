@@ -1,21 +1,24 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-const Registrarse = ({ userGoogle }) => {
-  const cerrarSesion = ()=>{
-    window.open('http://localhost:4500/auth/logout','_self')
+const Registrarse = ({ usuarioLogueado, username}) => {
+
+    const cerrarSesion = ()=>{
+    localStorage.removeItem('token')
+    navegar('/')
+    window.location.reload();
   }
+
   return (
     <>
-      {!userGoogle && (
+      {!usuarioLogueado && (
         <div className='registrarse'>
           <Link to={"/auth/registrarse"}>Registrarse</Link>
         </div>
       )}
-      {userGoogle && (
+      {usuarioLogueado && (
         <div>
           <div className="registrarse">
-            <img className='avatar' src={userGoogle.image} alt="" />
-            <Link to={"/auth/registrarse"}>{userGoogle.username}</Link>
+            <Link to={"/auth/registrarse"}>{username}</Link>
           </div>
           <div className="cerrar-sesion">
             <button onClick={cerrarSesion}>Cerrar Sesion</button>
