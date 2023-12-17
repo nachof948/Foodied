@@ -7,7 +7,7 @@ import { agregarAlCarrito } from '../../Funciones/agregarProducto';
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 
-const Veganos = ({userGoogle}) => {
+const Veganos = ({usuarioLogueado, username}) => {
   const [loading, setLoading] = useState(true)
   const navegar = useNavigate()
   useEffect(()=>{AOS.init()},[])
@@ -26,7 +26,7 @@ const Veganos = ({userGoogle}) => {
   },[])
   return(
     <>
-    <HeaderShop userGoogle={userGoogle} />
+    <HeaderShop usuarioLogueado={usuarioLogueado} username={username} />
     <main> 
       <section className='comida-habitual'>
         <div className="shop">
@@ -52,7 +52,7 @@ const Veganos = ({userGoogle}) => {
                   </div>
                   <div className="opciones-comprar">
                         <p>${precio}</p>
-                        {userGoogle ? (
+                        {usuarioLogueado ? (
                           <button className='comprar-producto' onClick={()=>{agregarAlCarrito(_id, navegar)}}>Comprar Ahora</button>
                         ) : (
                           <a className='comprar-producto' href='/auth/registrarse'>Comprar Ahora</a>

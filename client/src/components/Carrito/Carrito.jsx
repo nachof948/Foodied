@@ -5,7 +5,7 @@ import './Hoja de estilos/Carrito.css';
 import { useNavigate } from 'react-router-dom';
 
 
-const Carrito = ({ userGoogle }) => {
+const Carrito = ({ usuarioLogueado, username }) => {
   const [carrito, setCarrito] = useState([]);
   const [total, setTotal] = useState(0);
   const navegar = useNavigate()
@@ -125,7 +125,7 @@ const Carrito = ({ userGoogle }) => {
   }
   return (
     <div>
-      <HeaderShop userGoogle={userGoogle} />
+      <HeaderShop usuarioLogueado={usuarioLogueado} username={username} />
       <section className='section-carrito'>
         {loading ? (
           <div className="spinner"></div>

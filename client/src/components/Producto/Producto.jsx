@@ -5,7 +5,7 @@ import { HeaderShop, Footer } from '../../indice'
 import { agregarAlCarrito } from '../../Funciones/agregarProducto';
 import './Hoja de estilos/Producto.css'
 
-const Producto = ({userGoogle}) => {
+const Producto = ({usuarioLogueado, username}) => {
   const params = useParams()
   const [nombre, setNombre] = useState('')
   const [img, setImg] = useState('')
@@ -49,7 +49,7 @@ const Producto = ({userGoogle}) => {
   
   return(
     <>
-    <HeaderShop userGoogle={userGoogle} /> 
+    <HeaderShop usuarioLogueado={usuarioLogueado} username={username} /> 
       <main>
       {loading ? (
               <div className="contenedor-spinner">
@@ -78,7 +78,7 @@ const Producto = ({userGoogle}) => {
                   </div>
                   <p className='precio-producto'>${precio}</p>
                   <p className='descripcion-extensa-producto'>{descripcionExtensa}</p>
-                  {userGoogle ? (
+                  {usuarioLogueado ? (
                       <button className='comprar-producto' onClick={()=>{agregarAlCarrito(productoId, navegar)}}>Comprar Ahora</button>
                   ) : (
                     <a className='comprar-producto' href='/auth/registrarse'>Comprar Ahora</a>

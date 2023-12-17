@@ -39,18 +39,18 @@ function App() {
       <Routes>
         <Route path='/' element={<Home usuarioLogueado={usuarioLogueado} username={username} /> }></Route>
         <Route path='/comidas/all' element={<TodasLasComidas usuarioLogueado={usuarioLogueado} username={username} />}></Route>
-        <Route path='/comidas/carnes' element={<Carnes  />}></Route>
-        <Route path='/comidas/ensaladas' element={<Ensaladas  />}></Route>
-        <Route path='/comidas/sushi' element={<Sushi  />}></Route>
-        <Route path='/comidas/pastas' element={<Pastas   />}></Route>
-        <Route path='/comidas/pizzas' element={<Pizzas  />}></Route>
-        <Route path='/comidas/veganos' element={<Veganos  />}></Route>
-        <Route path='/comidas/sopas' element={<Sopas  />}></Route>
-        <Route path='/comidas/dulces' element={<Dulces  />}></Route>
-        <Route path='/comidas/hamburguesas' element={<Hamburguesas  />}></Route>
-        <Route path='/producto/:_id' element={<Producto  />}></Route>
+        <Route path='/comidas/carnes' element={<Carnes usuarioLogueado={usuarioLogueado} username={username} />}></Route>
+        <Route path='/comidas/ensaladas' element={<Ensaladas usuarioLogueado={usuarioLogueado} username={username} />}></Route>
+        <Route path='/comidas/sushi' element={<Sushi usuarioLogueado={usuarioLogueado} username={username} />}></Route>
+        <Route path='/comidas/pastas' element={<Pastas usuarioLogueado={usuarioLogueado} username={username}  />}></Route>
+        <Route path='/comidas/pizzas' element={<Pizzas usuarioLogueado={usuarioLogueado} username={username} />}></Route>
+        <Route path='/comidas/veganos' element={<Veganos usuarioLogueado={usuarioLogueado} username={username} />}></Route>
+        <Route path='/comidas/sopas' element={<Sopas usuarioLogueado={usuarioLogueado} username={username}  />}></Route>
+        <Route path='/comidas/dulces' element={<Dulces usuarioLogueado={usuarioLogueado} username={username}  />}></Route>
+        <Route path='/comidas/hamburguesas' element={<Hamburguesas usuarioLogueado={usuarioLogueado} username={username}  />}></Route>
+        <Route path='/producto/:_id' element={<Producto usuarioLogueado={usuarioLogueado} username={username}  />}></Route>
         <Route path='/auth/signup' element={<SignUp />}></Route>
-        <Route path='/compras' element={<Carrito  />}></Route>
+        <Route path='/compras' element={<Carrito usuarioLogueado={usuarioLogueado} username={username}  />}></Route>
         <Route path='/compra-realizada' element={<CompraRealizada />}></Route>
         <Route path= '/auth/signin' element={<SignIn />}></Route>
       </Routes>
