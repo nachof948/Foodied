@@ -27,8 +27,8 @@ const Home = ({ usuarioLogueado, username }) => {
           <Hero />
           <Opciones usuarioLogueado={usuarioLogueado}/>
           <Elegirnos />
-          <MenuEspecial />
-          <MenuHabitual />
+          <MenuEspecial usuarioLogueado={usuarioLogueado} />
+          <MenuHabitual usuarioLogueado={usuarioLogueado} />
           <SobreNosotros />
           <Footer />
         </>
