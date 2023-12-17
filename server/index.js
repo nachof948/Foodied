@@ -17,7 +17,7 @@ const GooglePassport = require('./config/config')
 
 app.use(
     cors({
-    origin: 'https://foodied-restaurante.vercel.app',
+    origin: ['https://foodied-restaurante.vercel.app'],
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     credentials: true
     })
