@@ -25,7 +25,7 @@ const Home = ({ usuarioLogueado, username }) => {
         <>
           <Header usuarioLogueado={usuarioLogueado} username={username} />
           <Hero />
-          <Opciones />
+          <Opciones usuarioLogueado={usuarioLogueado}/>
           <Elegirnos />
           <MenuEspecial />
           <MenuHabitual />
