@@ -9,7 +9,7 @@ const Opciones = ({usuarioLogueado}) => {
   const [opciones, setOpciones] = useState([])
   const navegar = useNavigate()
   useEffect(() => {
-    axios.get('https://foodied-server.vercel.app/home')
+    axios.get('https://foodied-server-nacho-fernandezs-projects.vercel.app/home')
     .then((response) =>{
       setOpciones(response.data.comidas)
     })
