@@ -1,8 +1,6 @@
 const Compra = require('../models/Compra')
 const Comidas= require('../models/Comidas')
 const mongoose = require('mongoose')
-const jwt = require('jsonwebtoken')
-require('config').config()
 const mostrarCarrito= async(req, res) => { 
     try{
         if(req.user){
@@ -28,12 +26,7 @@ const mostrarCarrito= async(req, res) => {
 const agregarProductos = async (req, res) => {
     const productoId = req.body.productoId; // Se recibe el ID del producto a agregar
     try {
-        const token = req.headers.authorization.split(' ')[1];
-
-        // Decodificar el token para obtener el ID del usuario
-        const decoded = jwt.verify(token,process.env.SECRET_KEY); // Reemplaza 'TU_SECRET_KEY' por tu clave secreta
-
-        const usuarioId = decoded.userId;
+        const usuarioId = req.user._id;
 
         // Buscamos el carrito del usuario
         let carritoUsuario = await Compra.findOne({ usuario: usuarioId });
