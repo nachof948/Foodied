@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 const compraSchema = new mongoose.Schema({
     usuario:{
         type: mongoose.Schema.Types.ObjectId,
-        ref: "UsuarioGoogle"
+        ref: "UsuarioFormulario"
     },
     items:[{
         producto:{
