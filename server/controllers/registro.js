@@ -1,4 +1,5 @@
 const UsuarioFormulario = require ('../models/Usuario-form')
+const Compra = require('../models/Compra')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 require('dotenv').config()
@@ -38,9 +39,15 @@ const login = async (req, res) => {
         if (!validarPassword) {
             return res.status(401).send('Contraseña incorrecta')
         }
+
+        // Verificamos si el usuario tiene un carrito, si no lo tiene, lo creamos
+        let carritoUsuario = await Compra.findOne({ usuario: encontrarUsuario._id });
+        if (!carritoUsuario) {
+            carritoUsuario = await Compra.create({ usuario: encontrarUsuario._id, items: [] });
+        }
         
         const token = jwt.sign({ userId: encontrarUsuario._id }, process.env.SECRET_KEY, { expiresIn: '1hr' })
-        res.send({message: 'Te has logueado exitosamente', username: encontrarUsuario.username}) // Este es el punto que puede causar problemas
+        res.send({ message: 'Te has logueado exitosamente', username: encontrarUsuario.username, token }) // Se puede incluir el token para usar en futuras solicitudes
     } catch (err) {
         res.status(500).send('Error al loguearse')
     }
