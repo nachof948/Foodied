@@ -18,13 +18,15 @@ const SignUp = () => {
     event.preventDefault()
     axios.post('https://foodied-server.vercel.app/auth/signup',{email, username, password})
     .then(() =>{
-      Swal.fire({
-        position: "center",
-        icon: "success",
-        title: "Te registraste exitosamente!!",
-        showConfirmButton: false,
-        timer: 750
-      });
+      setTimeout(() =>{
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: "Te registraste exitosamente!!",
+          showConfirmButton: false,
+          timer: 1500
+        });
+      },1000)
       setEmail('')
       setUsername('')
       setPassword('')

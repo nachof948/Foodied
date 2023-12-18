@@ -48,6 +48,8 @@ const SignIn = () => {
         <p>No tenes una cuenta?</p>
         <span>/</span>
         <Link to={'/auth/signup'}>Registrarme</Link>
+        <span>/</span>
+        <Link to={'/'}>Volver al inicio</Link>
       </div>
       
     </div>
