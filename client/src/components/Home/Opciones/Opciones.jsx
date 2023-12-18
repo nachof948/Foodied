@@ -14,7 +14,7 @@ const Opciones = ({usuarioLogueado}) => {
     .then((response) =>{
       const delay = setTimeout(() => {
         setLoading(false); // Actualiza el estado de carga después del tiempo de espera
-      }, 1000);
+      }, 2000);
       setOpciones(response.data.comidas)
       return () => clearTimeout(delay);
     })
