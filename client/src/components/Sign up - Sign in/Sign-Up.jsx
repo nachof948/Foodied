@@ -3,7 +3,6 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2'
-import 'sweetalert2/src/sweetalert2.scss'
 import './Hoja de estilos/SignUp.css'
 
 
@@ -18,7 +17,7 @@ const SignUp = () => {
   const manejarRegistro = (event) => {
     event.preventDefault()
     axios.post('https://foodied-server.vercel.app/auth/signup',{email, username, password})
-    .then((response) =>{
+    .then(() =>{
       Swal.fire({
         position: "center",
         icon: "success",
