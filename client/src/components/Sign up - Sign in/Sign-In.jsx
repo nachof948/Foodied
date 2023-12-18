@@ -2,6 +2,7 @@ import React,{useState} from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2'
 import './Hoja de estilos/SignIn.css'
 const SignIn = () => {
 
@@ -15,7 +16,13 @@ const SignIn = () => {
       const response = await axios.post('https://foodied-server.vercel.app/auth/login',{ username, password})
       const token = response.data.token
       const nombreUsuario = response.data.username
-      alert(`Bienvenido!!! ${nombreUsuario}`)
+      Swal.fire({
+        position: "center",
+        icon: "success",
+        title: `Hola ${nombreUsuario} bienvenido/a a Foodied!!`,
+        showConfirmButton: false,
+        timer: 2000
+      });
       setUsername('')
       setPassword('')
       navegar('/comidas/all')
