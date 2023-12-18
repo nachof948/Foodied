@@ -43,7 +43,7 @@
     flex-direction: column;
     gap: 3rem;
 }
-input{
+.input-form{
     width: 24rem;
     padding: 1rem;
     font-family: 'Lato', sans-serif;
@@ -56,12 +56,12 @@ input{
     border: 1px solid rgb(229,241,217) ;
     cursor: pointer;
 }
-input::placeholder{
+.input-form::placeholder{
     font-family: 'Lato', sans-serif;
     font-size: 1.2rem;
     font-weight: 500;
 }
-input:focus{
+.input-form:focus{
     outline:2px solid rgb(131,182,77);
 }
 .btn-form{
@@ -136,10 +136,10 @@ input:focus{
     .iniciar-sesion h1{
         font-size: 3rem;
     }
-    input{
+    .input-form{
         width: 17rem;
     }
-    input::placeholder{
+    .input-form::placeholder{
         font-size: 1.1rem;
     }
 }

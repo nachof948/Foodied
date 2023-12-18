@@ -32,7 +32,7 @@ const Footer = () => {
             <h2>Nuestro Boletin</h2>
             <form action="">
                 <input type="email" placeholder='Ingresa tu email' />
-                <span><button>Suscribite</button></span>
+                <span><button className='btn-footer'>Suscribite</button></span>
             </form>
         </div>
     </div>

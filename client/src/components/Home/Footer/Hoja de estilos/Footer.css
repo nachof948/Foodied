@@ -57,7 +57,7 @@ footer a:hover{
     font-size: 1.6rem;
     color: grey;
 }
-.suscribite button{
+.suscribite .btn-footer{
     background-color: rgb(132,183,78);
     border: 2px solid rgb(132,183,78);
     font-size: 1.3rem;
@@ -66,15 +66,15 @@ footer a:hover{
     border-radius: 10px;
     cursor: pointer;
     transition: all 250ms;
+    transform: translateX(242%);
 }
-.suscribite button:hover{
+.suscribite .btn-footer:hover{
     background-color: transparent;
     border: 2px solid rgb(132,183,78);
     color: rgb(132,183,78);
 }
 .suscribite span{
     position: absolute;
-    transform: translateX(-100%);
     background-color: transparent;
 }
 
@@ -107,12 +107,15 @@ footer a:hover{
     .suscribite input{
         width: 27rem;
     }
+    .suscribite .btn-footer{
+        transform: translateX(191%);
+    }
 }
 @media (max-width:1400px) {
     .suscribite input{
         padding: 1rem 0.8rem 1rem;
     }
-    .suscribite button{
+    .suscribite .btn-footer{
         padding: 1.15rem 2rem;
     }
     .suscribite h2{
@@ -123,7 +126,7 @@ footer a:hover{
     .suscribite input{
         padding: 0.8rem 0.8rem 1rem;
     }
-    .suscribite button{
+    .suscribite .btn-footer{
         padding: 1.05rem 2rem;
     }
 }
@@ -132,7 +135,10 @@ footer a:hover{
         width: 24rem;
         padding: 0.6rem 0.8rem 0.8rem;
     }
-    .suscribite button{
+    .suscribite .btn-footer{
+        transform: translateX(161%);
+    }
+    .suscribite .btn-footer{
         padding: 0.85rem 2rem;
     }
 }
@@ -140,16 +146,14 @@ footer a:hover{
     .suscribite input{
         width: 23rem;
     }
-    .suscribite button{
-        padding: 0.9rem 2rem;
+    .suscribite .btn-footer{
+        transform: translateX(151%);
+        padding: 0.9rem 2rem 0.8rem;
     }
 }
 @media (max-width:1100px) {
     .suscribite input{
         width: 23rem;
-    }
-    .suscribite button{
-        padding: 0.9rem 2rem;
     }
     footer a{
         font-size: 0.9rem;
@@ -174,9 +178,10 @@ footer a:hover{
         font-size: 1.2rem;
         color: grey;
     }
-    .suscribite button{
+    .suscribite .btn-footer{
         font-size: 1.1rem;
         padding: 0.7rem 1.2rem;
+        transform: translateX(194%);
     }
 }
 @media (max-width:920px) {
@@ -192,9 +197,10 @@ footer a:hover{
         font-size: 1.2rem;
         color: grey;
     }
-    .suscribite button{
+    .suscribite .btn-footer{
         font-size: 1.1rem;
         padding: 0.7rem 1rem;
+        transform: translateX(167%);
     }
 }
 @media (max-width:860px) {
@@ -228,9 +234,10 @@ footer a:hover{
         font-size: 1.2rem;
         color: grey;
     }
-    .suscribite button{
+    .suscribite .btn-footer{
         font-size: 1.1rem;
         padding: 0.7rem 0.7rem;
+        transform: translateX(224%);
     } 
 }
 /* ===FIN TABLET==== */
@@ -245,6 +252,10 @@ footer a:hover{
         width: 16rem;
         font-size: 1.2rem;
     }
+    .suscribite .btn-footer{
+        padding: 0.7rem 0.7rem;
+        transform: translateX(178%);
+    } 
 }
 /* ====FIN CELULAR==== */
 

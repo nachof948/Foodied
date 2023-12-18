@@ -30,19 +30,19 @@ const SignUp = () => {
       <div className='registro'>
       <h1>Registarse</h1>
       <form onSubmit={manejarRegistro}>
-        <input type="email" 
+        <input className='input-form' type="email" 
         name='email' 
         value={email}
         onChange={(e)=>setEmail(e.target.value)} 
         placeholder='Email...' />
 
-        <input type="text" 
+        <input className='input-form' type="text" 
         name='username' 
         value={username} 
         onChange={(e)=>setUsername(e.target.value)} 
         placeholder='Nombre de usuario...' />
 
-        <input type="password" 
+        <input className='input-form' type="password" 
         name='password' 
         value={password} 
         onChange={(e)=>setPassword(e.target.value)} 

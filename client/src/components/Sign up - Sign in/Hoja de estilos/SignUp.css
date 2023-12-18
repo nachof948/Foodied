@@ -42,7 +42,7 @@ form{
     flex-direction: column;
     gap: 2.5rem;
 }
-input{
+.input-form{
     width: 24rem;
     padding: 1rem;
     font-family: 'Lato', sans-serif;
@@ -55,12 +55,12 @@ input{
     border: 1px solid rgb(229,241,217) ;
     cursor: pointer;
 }
-input::placeholder{
+.input-form::placeholder{
     font-family: 'Lato', sans-serif;
     font-size: 1.2rem;
     font-weight: 500;
 }
-input:focus{
+.input-form:focus{
     outline:2px solid rgb(131,182,77);
 }
 .btn-form{
@@ -135,7 +135,7 @@ input:focus{
     .registro h1{
         font-size: 3.5rem;
     }
-    input{
+    .input-form{
         width: 19rem;
     }
 }

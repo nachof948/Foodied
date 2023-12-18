@@ -31,13 +31,13 @@ const SignIn = () => {
     <div className='iniciar-sesion'>
       <h1>Iniciar Sesion</h1>
       <form className='form-iniciar' onSubmit={manejarLogin}>
-        <input type="text" 
+        <input className='input-form' type="text" 
         name='username' 
         value={username} 
         onChange={(e)=>setUsername(e.target.value)} 
         placeholder='Nombre de usuario...' />
 
-        <input type="password" 
+        <input className='input-form' type="password" 
         name='password' 
         value={password} 
         onChange={(e)=>setPassword(e.target.value)} 
