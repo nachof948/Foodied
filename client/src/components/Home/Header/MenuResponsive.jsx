@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {Lupa, CarritoDeCompras, Registrarse} from '../../../indice'
-const MenuResponsive = ({userGoogle}) => {
+const MenuResponsive = ({usuarioLogueado, username}) => {
   const [menuDesplegado, setMenuDesplegado] = useState(false)
 
   const manejarClick = () => {
@@ -24,7 +24,7 @@ const MenuResponsive = ({userGoogle}) => {
             <Lupa />
             <CarritoDeCompras />
           </div>
-          <Registrarse userGoogle={userGoogle} />
+          <Registrarse usuarioLogueado={usuarioLogueado} username={username} />
         </div>
     </div>}
         <div className="btn-responsive">
