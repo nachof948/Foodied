@@ -2,7 +2,6 @@ import React,{useState} from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
-import Swal from 'sweetalert2'
 import './Hoja de estilos/SignIn.css'
 const SignIn = () => {
 
@@ -22,13 +21,6 @@ const SignIn = () => {
       localStorage.setItem('token', token)
       localStorage.setItem('username', nombreUsuario)
       window.location.reload();
-      Swal.fire({
-        position: "center",
-        icon: "success",
-        title: `Hola ${nombreUsuario} bienvenido/a a Foodied!!`,
-        showConfirmButton: false,
-        timer: 2000
-      });
     }
     catch(err){
       console.log('Hay un problema', err)
