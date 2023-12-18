@@ -23,7 +23,7 @@ const SignUp = () => {
         icon: "success",
         title: "Te registraste exitosamente!!",
         showConfirmButton: false,
-        timer: 1500
+        timer: 750
       });
       setEmail('')
       setUsername('')
