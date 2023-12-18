@@ -16,6 +16,12 @@ const SignIn = () => {
       const response = await axios.post('https://foodied-server.vercel.app/auth/login',{ username, password})
       const token = response.data.token
       const nombreUsuario = response.data.username
+      setUsername('')
+      setPassword('')
+      navegar('/comidas/all')
+      localStorage.setItem('token', token)
+      localStorage.setItem('username', nombreUsuario)
+      window.location.reload();
       Swal.fire({
         position: "center",
         icon: "success",
@@ -23,12 +29,6 @@ const SignIn = () => {
         showConfirmButton: false,
         timer: 2000
       });
-      setUsername('')
-      setPassword('')
-      navegar('/comidas/all')
-      localStorage.setItem('token', token)
-      localStorage.setItem('username', nombreUsuario)
-      window.location.reload();
     }
     catch(err){
       console.log('Hay un problema', err)
