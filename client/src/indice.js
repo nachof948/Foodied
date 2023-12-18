@@ -49,7 +49,9 @@ export { Producto } from './components/Producto/Producto.jsx'
 
 /* REGISTRARSE */
 export { Registrarme } from './components/Sign up - Sign in/Registrarme.jsx'
+export { IniciarSesion } from './components/Sign up - Sign in/Iniciar-sesion.jsx'
 export { ImagenRegistrarme } from './components/Sign up - Sign in/Imagen-registrarme.jsx'
+export { ImagenIniciarSesion } from './components/Sign up - Sign in/Imagen-IniciarSesion.jsx'
 export { Google } from './components/Sign up - Sign in/Google.jsx'
 export { SignUp } from './components/Sign up - Sign in/Sign-Up.jsx'
 export { SignIn } from './components/Sign up - Sign in/Sign-In.jsx'

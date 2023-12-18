@@ -1,7 +1,7 @@
 /* import { useEffect, useState } from 'react'; */
 import './App.css';
 import { Route, Routes} from 'react-router-dom'
-import { TodasLasComidas, Carnes, Ensaladas, Sushi, Pastas, Pizzas, Sopas, Dulces, Veganos, Hamburguesas, Home, Producto, Carrito, CompraRealizada,SignIn, SignUp} from './indice';
+import { TodasLasComidas, Carnes, Ensaladas, Sushi, Pastas, Pizzas, Sopas, Dulces, Veganos, Hamburguesas, Home, Producto, Carrito, CompraRealizada, Registrarme, IniciarSesion} from './indice';
 /* import axios from 'axios'; */
 
 function App() {
@@ -49,10 +49,10 @@ function App() {
         <Route path='/comidas/dulces' element={<Dulces usuarioLogueado={usuarioLogueado} username={username}  />}></Route>
         <Route path='/comidas/hamburguesas' element={<Hamburguesas usuarioLogueado={usuarioLogueado} username={username}  />}></Route>
         <Route path='/producto/:_id' element={<Producto usuarioLogueado={usuarioLogueado} username={username}  />}></Route>
-        <Route path='/auth/signup' element={<SignUp />}></Route>
+        <Route path='/auth/signup' element={<Registrarme />}></Route>
         <Route path='/compras' element={<Carrito usuarioLogueado={usuarioLogueado} username={username}  />}></Route>
         <Route path='/compra-realizada' element={<CompraRealizada />}></Route>
-        <Route path= '/auth/signin' element={<SignIn />}></Route>
+        <Route path= '/auth/signin' element={<IniciarSesion />}></Route>
       </Routes>
   </div>
   );

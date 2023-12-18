@@ -2,7 +2,7 @@ import React,{useState} from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
-
+import './Hoja de estilos/SignIn.css'
 const SignIn = () => {
 
   const [username, setUsername] = useState('')
@@ -28,24 +28,28 @@ const SignIn = () => {
     }
   }
   return(
-    <div className='registro'>
-      <h1>Registarse</h1>
-      <form onSubmit={manejarLogin}>
+    <div className='iniciar-sesion'>
+      <h1>Iniciar Sesion</h1>
+      <form className='form-iniciar' onSubmit={manejarLogin}>
         <input type="text" 
         name='username' 
         value={username} 
         onChange={(e)=>setUsername(e.target.value)} 
         placeholder='Nombre de usuario...' />
 
-        <label htmlFor="">Contraseña</label>
         <input type="password" 
         name='password' 
         value={password} 
         onChange={(e)=>setPassword(e.target.value)} 
         placeholder='Contraseña...' />
-        <button type='submit'>Registarme</button>
+        <button className='btn-form'type='submit'>Iniciar Sesion</button>
       </form>
-      <Link to={'/auth/signup'}>No tenes una cuenta?</Link>
+      <div className="pregunta">
+        <p>No tenes una cuenta?</p>
+        <span>/</span>
+        <Link to={'/auth/signup'}>Registrarme</Link>
+      </div>
+      
     </div>
   )
 }

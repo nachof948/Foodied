@@ -22,25 +22,26 @@
     border-radius: 50%;
     border: 1rem solid rgb(131,182,77);
 }
-/* REGISTRO CON FORMULARIO */
-.registro{
+/* INCIAR SESION CON FORMULARIO */
+.iniciar-sesion{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 2rem;
     flex-basis: 65%;
+    margin-bottom: 5rem;
 }
-.registro a{
+.iniciar-sesion a{
     text-decoration: underline;
 }
-.registro h1{
+.iniciar-sesion h1{
     font-size: 4rem;
 }
-form{
+.form-iniciar{
     display: flex;
     flex-direction: column;
-    gap: 2.5rem;
+    gap: 3rem;
 }
 input{
     width: 24rem;
@@ -49,7 +50,7 @@ input{
     font-size: 1.2rem;
     font-weight: 700;
     border-radius: 25px;
-    color: rgb(97, 96, 96);
+    color: gray;
     border: none;
     background-color: rgb(229,241,217) ;
     border: 1px solid rgb(229,241,217) ;
@@ -132,11 +133,14 @@ input:focus{
     }
 }
 @media (max-width:450px) {
-    .registro h1{
-        font-size: 3.5rem;
+    .iniciar-sesion h1{
+        font-size: 3rem;
     }
     input{
-        width: 19rem;
+        width: 17rem;
+    }
+    input::placeholder{
+        font-size: 1.1rem;
     }
 }
 /* FIN SECTOR MEDIA-QUERIES */
