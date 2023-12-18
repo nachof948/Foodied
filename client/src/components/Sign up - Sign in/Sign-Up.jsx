@@ -61,6 +61,8 @@ const SignUp = () => {
         <p>Ya tenes una cuenta?</p>
         <span>/</span>
         <Link to={'/auth/signin'}>Iniciar Sesion</Link>
+        <span>/</span>
+        <Link to={'/'}>Volver al inicio</Link>
       </div>
     </div>
   )
