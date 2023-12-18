@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2'
+import 'sweetalert2/src/sweetalert2.scss'
 import './Hoja de estilos/SignUp.css'
 
 
