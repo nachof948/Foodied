@@ -5,13 +5,17 @@ import './Hoja de estilos/Carrito.css';
 import { useNavigate } from 'react-router-dom';
 
 
-const Carrito = ({ usuarioLogueado, username }) => {
+const Carrito = ({ usuarioLogueado, username, token }) => {
   const [carrito, setCarrito] = useState([]);
   const [total, setTotal] = useState(0);
   const navegar = useNavigate()
   const [loading, setLoading] = useState(true)
   useEffect(() => {
-    axios.get('https://foodied-server.vercel.app/compras')
+    axios.get('https://foodied-server.vercel.app/compras',{
+      headers:{
+        Authorization:`Bearer ${token}`
+      }
+    })
       .then((response) => {
         const delay = setTimeout(() => {
           setLoading(false); // Actualiza el estado de carga después del tiempo de espera
@@ -34,7 +38,11 @@ const Carrito = ({ usuarioLogueado, username }) => {
   }, []);
   const restarProducto = async (productoId) => {
     try {
-      await axios.post('https://foodied-server.vercel.app/compras/restar', { id: productoId });
+      await axios.post('https://foodied-server.vercel.app/compras/restar', { id: productoId },{
+        headers:{
+          Authorization:`Bearer ${token}`
+        }
+      });
   
       const updatedCarrito = carrito.map((item) => {
         const updatedItems = item.items.map((producto) => {
@@ -68,7 +76,11 @@ const Carrito = ({ usuarioLogueado, username }) => {
 
   const sumarProducto = async (productoId) => {
     try {
-      await axios.post('https://foodied-server.vercel.app/compras/sumar', { id: productoId });
+      await axios.post('https://foodied-server.vercel.app/compras/sumar', { id: productoId },{
+        headers:{
+          Authorization:`Bearer ${token}`
+        }
+      });
   
       const updatedCarrito = carrito.map((item) => {
         const updatedItems = item.items.map((producto) => {
@@ -93,7 +105,11 @@ const Carrito = ({ usuarioLogueado, username }) => {
   };
     
   const eliminarProducto = (id) => {
-    axios.delete(`https://foodied-server.vercel.app/compras/eliminar/${id}`)
+    axios.delete(`https://foodied-server.vercel.app/compras/eliminar/${id}`,{
+      headers:{
+        Authorization:`Bearer ${token}`
+      }
+    })
       .then(() => {
         const updatedCarrito = carrito.map((item) => {
           const updatedItems = item.items.filter((producto) => producto._id !== id);
@@ -117,7 +133,11 @@ const Carrito = ({ usuarioLogueado, username }) => {
       });
   };
   const comprarProducto = ()=>{
-    axios.post('https://foodied-server.vercel.app/compra-realizada')
+    axios.post('https://foodied-server.vercel.app/compra-realizada',{
+      headers:{
+        Authorization:`Bearer ${token}`
+      }
+    })
     .then(()=>{
       navegar('/compra-realizada')
     })
