@@ -36,7 +36,8 @@ const Carrito = ({ usuarioLogueado, username, token }) => {
       });
       window.scrollTo({ top: 0, behavior: 'auto' });
   }, []);
-  const restarProducto = async (productoId, token) => {
+  
+  const restarProducto = async (productoId) => {
     try {
       await axios.post('https://foodied-server.vercel.app/compras/restar', { id: productoId },{
         headers:{
@@ -74,7 +75,7 @@ const Carrito = ({ usuarioLogueado, username, token }) => {
   };
   
 
-  const sumarProducto = async (productoId, token) => {
+  const sumarProducto = async (productoId) => {
     try {
       await axios.post('https://foodied-server.vercel.app/compras/sumar', { id: productoId },{
         headers:{
@@ -104,7 +105,7 @@ const Carrito = ({ usuarioLogueado, username, token }) => {
     }
   };
     
-  const eliminarProducto = (id, token) => {
+  const eliminarProducto = (id) => {
     axios.delete(`https://foodied-server.vercel.app/compras/eliminar/${id}`,{
       headers:{
         Authorization:`Bearer ${token}`
@@ -132,7 +133,7 @@ const Carrito = ({ usuarioLogueado, username, token }) => {
         console.log(error);
       });
   };
-  const comprarProducto = (token)=>{
+  const comprarProducto = ()=>{
     axios.delete('https://foodied-server.vercel.app/compra-realizada',{
       headers:{
         Authorization:`Bearer ${token}`
@@ -166,11 +167,11 @@ const Carrito = ({ usuarioLogueado, username, token }) => {
                     return (
                       <div className="carrito-productos" key={_id}>
                         <img src={imagen} alt={nombre} width={"100px"} />
-                        <button className="comprar-ahora agregar" type="submit" onClick={() => restarProducto(_id, token)}>-</button>
+                        <button className="comprar-ahora agregar" type="submit" onClick={() => restarProducto(_id)}>-</button>
                         <p className="product-quantity">{cantidad}</p>
-                        <button className="comprar-ahora agregar" onClick={() => sumarProducto(_id, token)}>+</button>
+                        <button className="comprar-ahora agregar" onClick={() => sumarProducto(_id)}>+</button>
                         <p>$ {precio}</p>
-                        <button className='eliminar' onClick={() => eliminarProducto(_id, token)}>Eliminar</button>
+                        <button className='eliminar' onClick={() => eliminarProducto(_id)}>Eliminar</button>
                       </div>
                     );
                   })}
@@ -182,7 +183,7 @@ const Carrito = ({ usuarioLogueado, username, token }) => {
                 <div className="comprar-carrito">
                   <div className='comprar'>
                     <p>Total:${total}</p>
-                    <button className="compra" onClick={() => comprarProducto(token)}>Comprar</button>
+                    <button className="compra" onClick={() => comprarProducto()}>Comprar</button>
                   </div>
                   <div>
                     <a className="explorar" href="/comidas/all">Explorar más</a>
