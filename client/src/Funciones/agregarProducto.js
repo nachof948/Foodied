@@ -6,9 +6,8 @@ const agregarAlCarrito = (productoId,token,navegar) => {
         Authorization:`Bearer ${token}`
       }
     })
-      .then((response) => {
+      .then(() => {
         navegar('/compras')
-        console.log('Producto agregado al carrito', response.data.carrito);
       })
       .catch((error) => {
         console.log(error);
