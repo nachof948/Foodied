@@ -41,7 +41,8 @@ const Carrito = ({ usuarioLogueado, username, token }) => {
     try {
       await axios.post('https://foodied-server.vercel.app/compras/restar', { id: productoId },{
         headers:{
-          Authorization:`Bearer ${token}`
+          Authorization:`Bearer ${token}`,
+          'Content-Type': 'application/json'
         }
       });
   
@@ -79,7 +80,8 @@ const Carrito = ({ usuarioLogueado, username, token }) => {
     try {
       await axios.post('https://foodied-server.vercel.app/compras/sumar', { id: productoId },{
         headers:{
-          Authorization:`Bearer ${token}`
+          Authorization:`Bearer ${token}`,
+          'Content-Type': 'application/json'
         }
       });
   
@@ -108,7 +110,8 @@ const Carrito = ({ usuarioLogueado, username, token }) => {
   const eliminarProducto = (id) => {
     axios.delete(`https://foodied-server.vercel.app/compras/eliminar/${id}`,{
       headers:{
-        Authorization:`Bearer ${token}`
+        Authorization:`Bearer ${token}`,
+        'Content-Type': 'application/json'
       }
     })
       .then(() => {
@@ -136,7 +139,8 @@ const Carrito = ({ usuarioLogueado, username, token }) => {
   const comprarProducto = ()=>{
     axios.delete('https://foodied-server.vercel.app/compra-realizada',{
       headers:{
-        Authorization:`Bearer ${token}`
+        Authorization:`Bearer ${token}`,
+        'Content-Type': 'application/json'
       }
     })
     .then(()=>{
