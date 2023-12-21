@@ -166,11 +166,11 @@ const Carrito = ({ usuarioLogueado, username, token }) => {
                     return (
                       <div className="carrito-productos" key={_id}>
                         <img src={imagen} alt={nombre} width={"100px"} />
-                        <button className="comprar-ahora agregar" type="submit" onClick={() => restarProducto(_id)}>-</button>
+                        <button className="comprar-ahora agregar" type="submit" onClick={() => restarProducto(_id, token)}>-</button>
                         <p className="product-quantity">{cantidad}</p>
-                        <button className="comprar-ahora agregar" onClick={() => sumarProducto(_id)}>+</button>
+                        <button className="comprar-ahora agregar" onClick={() => sumarProducto(_id, token)}>+</button>
                         <p>$ {precio}</p>
-                        <button className='eliminar' onClick={() => eliminarProducto(_id)}>Eliminar</button>
+                        <button className='eliminar' onClick={() => eliminarProducto(_id, token)}>Eliminar</button>
                       </div>
                     );
                   })}
@@ -182,7 +182,7 @@ const Carrito = ({ usuarioLogueado, username, token }) => {
                 <div className="comprar-carrito">
                   <div className='comprar'>
                     <p>Total:${total}</p>
-                    <button className="compra" onClick={() => comprarProducto()}>Comprar</button>
+                    <button className="compra" onClick={() => comprarProducto(token)}>Comprar</button>
                   </div>
                   <div>
                     <a className="explorar" href="/comidas/all">Explorar más</a>
