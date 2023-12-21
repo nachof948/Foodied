@@ -39,12 +39,13 @@ const Carrito = ({ usuarioLogueado, username, token }) => {
   
   const restarProducto = async (productoId) => {
     try {
-      await axios.post('https://foodied-server.vercel.app/compras/restar', { id: productoId, token: token },{
+      await axios.post('https://foodied-server.vercel.app/compras/restar', { id: productoId },{
         headers:{
+          Authorization:`Bearer ${token}`,
           'Content-Type': 'application/json'
         }
       });
-  
+      console.log(token)
       const updatedCarrito = carrito.map((item) => {
         const updatedItems = item.items.map((producto) => {
           if (producto._id === productoId) {
