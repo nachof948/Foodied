@@ -38,7 +38,7 @@ function App() {
   <div className="App">
       <Routes>
       <Route path='/' element={<Home usuarioLogueado={usuarioLogueado} username={username} token={token} />}></Route>
-        <Route path='/comidas/all' element={<TodasLasComidas usuarioLogueado={usuarioLogueado} username={username} />}></Route>
+        <Route path='/comidas/all' element={<TodasLasComidas usuarioLogueado={usuarioLogueado} username={username} token={token} />}></Route>
         <Route path='/comidas/carnes' element={<Carnes usuarioLogueado={usuarioLogueado} username={username} token={token} />}></Route>
         <Route path='/comidas/ensaladas' element={<Ensaladas usuarioLogueado={usuarioLogueado} username={username} token={token} />}></Route>
         <Route path='/comidas/sushi' element={<Sushi usuarioLogueado={usuarioLogueado} username={username} token={token} />}></Route>
