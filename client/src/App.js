@@ -1,7 +1,7 @@
 /* import { useEffect, useState } from 'react'; */
 import './App.css';
 import { Route, Routes} from 'react-router-dom'
-import { TodasLasComidas, Carnes, Ensaladas, Sushi, Pastas, Pizzas, Sopas, Dulces, Veganos, Hamburguesas, Home, Producto, Carrito, CompraRealizada, Registrarme, IniciarSesion} from './indice';
+import { TodasLasComidas, Carnes, Ensaladas, Sushi, Pastas, Pizzas, Sopas, Dulces, Veganos, Hamburguesas, Home, Producto, Carrito, CompraRealizada, Registrarme, SignIn} from './indice';
 /* import axios from 'axios'; */
 
 function App() {
