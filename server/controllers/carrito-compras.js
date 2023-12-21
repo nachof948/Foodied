@@ -179,7 +179,7 @@ const restarProductos = async (req, res) => {
         } else {
             res.send('Producto no encontrado en el carrito');
         }
-
+        res.redirect('/compras')
     } catch (error) {
         console.log(error);
     }
