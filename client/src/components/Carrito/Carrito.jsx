@@ -109,7 +109,7 @@ const Carrito = ({ usuarioLogueado, username, token }) => {
   const eliminarProducto = (id) => {
     axios.delete(`https://foodied-server.vercel.app/compras/eliminar/${id}`,{
       headers:{
-        Authorization:`Bearer ${token}`,
+        Authorization:'Bearer' + localStorage.getItem('token'),
         'Content-Type': 'application/json'
       }
     })
