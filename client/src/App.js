@@ -7,7 +7,7 @@ import { TodasLasComidas, Carnes, Ensaladas, Sushi, Pastas, Pizzas, Sopas, Dulce
 function App() {
   const token = localStorage.getItem('token');
   const username = localStorage.getItem('username');
-  const usuarioLogueado = !!token;
+  const usuarioLogueado = localStorage.getItem('token') !== null;
 
 /*   const [userGoogle, setUserGoogle] = useState(null)
   
@@ -37,22 +37,22 @@ function App() {
   return (
   <div className="App">
       <Routes>
-        <Route path='/' element={<Home usuarioLogueado={usuarioLogueado} username={username} /> }></Route>
+      <Route path='/' element={<Home usuarioLogueado={usuarioLogueado} username={username} token={token} />}></Route>
         <Route path='/comidas/all' element={<TodasLasComidas usuarioLogueado={usuarioLogueado} username={username} />}></Route>
-        <Route path='/comidas/carnes' element={<Carnes usuarioLogueado={usuarioLogueado} username={username} />}></Route>
-        <Route path='/comidas/ensaladas' element={<Ensaladas usuarioLogueado={usuarioLogueado} username={username} />}></Route>
-        <Route path='/comidas/sushi' element={<Sushi usuarioLogueado={usuarioLogueado} username={username} />}></Route>
-        <Route path='/comidas/pastas' element={<Pastas usuarioLogueado={usuarioLogueado} username={username}  />}></Route>
-        <Route path='/comidas/pizzas' element={<Pizzas usuarioLogueado={usuarioLogueado} username={username} />}></Route>
-        <Route path='/comidas/veganos' element={<Veganos usuarioLogueado={usuarioLogueado} username={username} />}></Route>
-        <Route path='/comidas/sopas' element={<Sopas usuarioLogueado={usuarioLogueado} username={username}  />}></Route>
-        <Route path='/comidas/dulces' element={<Dulces usuarioLogueado={usuarioLogueado} username={username}  />}></Route>
-        <Route path='/comidas/hamburguesas' element={<Hamburguesas usuarioLogueado={usuarioLogueado} username={username}  />}></Route>
-        <Route path='/producto/:_id' element={<Producto usuarioLogueado={usuarioLogueado} username={username}  />}></Route>
+        <Route path='/comidas/carnes' element={<Carnes usuarioLogueado={usuarioLogueado} username={username} token={token} />}></Route>
+        <Route path='/comidas/ensaladas' element={<Ensaladas usuarioLogueado={usuarioLogueado} username={username} token={token} />}></Route>
+        <Route path='/comidas/sushi' element={<Sushi usuarioLogueado={usuarioLogueado} username={username} token={token} />}></Route>
+        <Route path='/comidas/pastas' element={<Pastas usuarioLogueado={usuarioLogueado} username={username} token={token}  />}></Route>
+        <Route path='/comidas/pizzas' element={<Pizzas usuarioLogueado={usuarioLogueado} username={username} token={token} />}></Route>
+        <Route path='/comidas/veganos' element={<Veganos usuarioLogueado={usuarioLogueado} username={username} token={token} />}></Route>
+        <Route path='/comidas/sopas' element={<Sopas usuarioLogueado={usuarioLogueado} username={username} token={token} />}></Route>
+        <Route path='/comidas/dulces' element={<Dulces usuarioLogueado={usuarioLogueado} username={username} token={token} />}></Route>
+        <Route path='/comidas/hamburguesas' element={<Hamburguesas usuarioLogueado={usuarioLogueado} username={username} token={token} />}></Route>
+        <Route path='/producto/:_id' element={<Producto usuarioLogueado={usuarioLogueado} username={username} token={token} />}></Route>
         <Route path='/auth/signup' element={<Registrarme />}></Route>
-        <Route path='/compras' element={<Carrito usuarioLogueado={usuarioLogueado} username={username}  />}></Route>
+        <Route path='/compras' element={<Carrito usuarioLogueado={usuarioLogueado} username={username} token={token} />}></Route>
         <Route path='/compra-realizada' element={<CompraRealizada />}></Route>
-        <Route path= '/auth/signin' element={<IniciarSesion />}></Route>
+        <Route path= '/auth/signin' element={<SignIn />}></Route>
       </Routes>
   </div>
   );

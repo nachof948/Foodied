@@ -5,7 +5,7 @@ import { mirarProducto } from '../../../Funciones/mirarProducto';
 import { agregarAlCarrito } from '../../../Funciones/agregarProducto';
 import './Hojas de estilo/Opciones.css'
 
-const Opciones = ({usuarioLogueado}) => {
+const Opciones = ({usuarioLogueado, token}) => {
   const [loading, setLoading] = useState(true)
   const [opciones, setOpciones] = useState([])
   const navegar = useNavigate()
@@ -44,7 +44,7 @@ const Opciones = ({usuarioLogueado}) => {
               <div className="opciones-comprar">
                     <p>${precio}</p>
                     {usuarioLogueado ? (
-                        <button className='comprar-producto' onClick={()=>{agregarAlCarrito(_id, navegar)}}>Comprar Ahora</button>
+                        <button className='comprar-producto' onClick={()=>{agregarAlCarrito(_id, token ,navegar)}}>Comprar Ahora</button>
                     ) : (
                       <a className='comprar-producto' href='/auth/registrarse'>Comprar Ahora</a>
                     )}

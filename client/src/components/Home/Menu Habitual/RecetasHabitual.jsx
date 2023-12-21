@@ -6,7 +6,7 @@ import { mirarProducto } from '../../../Funciones/mirarProducto';
 import 'aos/dist/aos.css'
 import { agregarAlCarrito } from '../../../Funciones/agregarProducto';
 
-const RecetasHabitual = ({userGoogle}) => {
+const RecetasHabitual = ({usuarioLogueado, token}) => {
   const navegar = useNavigate()
   const [menuHabitual,setMenuHabitual] = useState([])
   useEffect(()=>{AOS.init()},[])
@@ -41,8 +41,8 @@ const RecetasHabitual = ({userGoogle}) => {
           </div>
           <div className="opciones-comprar-habitual">
                 <p>${precio}</p>
-                {userGoogle ? (
-                      <button className='comprar-producto' onClick={()=>{agregarAlCarrito(_id, navegar)}}>Comprar Ahora</button>
+                {usuarioLogueado ? (
+                      <button className='comprar-producto' onClick={()=>{agregarAlCarrito(_id,token ,navegar)}}>Comprar Ahora</button>
                   ) : (
                     <a className='comprar-producto' href='/auth/registrarse'>Comprar Ahora</a>
                   )}              </div>
