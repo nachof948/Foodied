@@ -4,6 +4,6 @@ const router = express.Router();
 
 const { compra } = require('../controllers/comprar');
 
-router.post('/compra-realizada', compra)
+router.delete('/compra-realizada', compra)
 
 module.exports = router;
