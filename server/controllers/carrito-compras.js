@@ -38,8 +38,7 @@ const mostrarCarrito= async(req, res) => {
 /* AGREGAR PRODUCTOS AL CARRITO */
 const agregarProductos = async (req, res) => {
     const productoId = req.body.productoId; // Se recibe el ID del producto a agregar
-    try {
-        const authotization = req.get('authorization')
+    const authotization = req.get('authorization')
         let token = null
         if(authotization && authotization.toLowerCase().startsWith('bearer')){
             token = authotization.substring(7)
@@ -49,7 +48,7 @@ const agregarProductos = async (req, res) => {
             return res.status(401).json({error: 'Token invalido'})
         }
         const usuarioId = decodedToken.id
-
+    try {
         // Buscamos el carrito del usuario
         let carritoUsuario = await Compra.findOne({ usuario: usuarioId });
 
@@ -91,20 +90,20 @@ const agregarProductos = async (req, res) => {
 
 const sumarProductos = async (req, res) => {
     const productoId = req.body.id;
+    const authorization = req.get('authorization'); //Recupera la cabecera
+    let token = null
+    if(authorization && authorization.toLowerCase().startsWith('bearer')){
+        token = authorization.substring(7)
+    }
+    
+    const decodedToken = jwt.verify(token, process.env.TOKEN)
+    if(!token || !decodedToken.id){
+        return res.status(401).json({error:'Token invalido'})
+    } 
+    const usuarioId = decodedToken.id;
     try {
-        /* Tomamos el ID del usuario */
-        /* Tomamos el ID del usuario */
-        const authorization = req.get('authorization'); //Recupera la cabecera
-        let token = null
-        if(authorization && authorization.toLowerCase().startsWith('bearer')){
-            token = authorization.substring(7)
-        }
-        
-        const decodedToken = jwt.verify(token, process.env.TOKEN)
-        if(!token || !decodedToken.id){
-            return res.status(401).json({error:'Token invalido'})
-        } 
-        const usuarioId = decodedToken.id;
+
+       
 
         /* Buscamos el carrito del usuario */
         let compraUsuario = await Compra.findOne({ usuario: usuarioId });
@@ -131,10 +130,7 @@ const sumarProductos = async (req, res) => {
 
 const restarProductos = async (req, res) => {
     const productoId = req.body.id;
-    try {
-        /* Tomamos el ID del usuario */
-         /* Tomamos el ID del usuario */
-         const authorization = req.get('authorization'); //Recupera la cabecera
+    const authorization = req.get('authorization'); //Recupera la cabecera
          let token = null
          if(authorization && authorization.toLowerCase().startsWith('bearer')){
              token = authorization.substring(7)
@@ -145,6 +141,10 @@ const restarProductos = async (req, res) => {
              return res.status(401).json({error:'Token invalido'})
          } 
          const usuarioId = decodedToken.id;
+    try {
+        /* Tomamos el ID del usuario */
+         /* Tomamos el ID del usuario */
+         
 
         /* Buscamos el carrito del usuario */
         let compraUsuario = await Compra.findOne({ usuario: usuarioId });
@@ -194,10 +194,7 @@ const restarProductos = async (req, res) => {
 /* ELIMINAR PRODUCTO DEL CARRITO */
 const eliminarProductos = async (req, res) => {
     const id = req.params.id;
-
-    try {
-         /* Tomamos el ID del usuario */
-         const authorization = req.get('authorization'); //Recupera la cabecera
+    const authorization = req.get('authorization'); //Recupera la cabecera
          let token = null
          if(authorization && authorization.toLowerCase().startsWith('bearer')){
              token = authorization.substring(7)
@@ -208,6 +205,10 @@ const eliminarProductos = async (req, res) => {
              return res.status(401).json({error:'Token invalido'})
          } 
          const usuarioId = decodedToken.id;
+
+    try {
+         /* Tomamos el ID del usuario */
+         
         const carritoUsuario = await Compra.findOneAndUpdate(
             { usuario: usuarioId },
             { $pull: { items: { _id: id } } },

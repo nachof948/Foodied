@@ -2,9 +2,7 @@ const Compra = require('../models/Compra')
 const jwt = require('jsonwebtoken')
 require('dotenv').config()
 const compra = async(req,res)=>{
-    try{
-         /* Tomamos el ID del usuario */
-         const authorization = req.get('authorization'); //Recupera la cabecera
+    const authorization = req.get('authorization'); //Recupera la cabecera
          let token = null
          if(authorization && authorization.toLowerCase().startsWith('bearer')){
              token = authorization.substring(7)
@@ -15,6 +13,9 @@ const compra = async(req,res)=>{
              return res.status(401).json({error:'Token invalido'})
          } 
          const usuarioId = decodedToken.id;
+    try{
+         /* Tomamos el ID del usuario */
+         
         const eliminarCarrito = await Compra.findOneAndDelete({usuario: usuarioId});
         res.send(eliminarCarrito)
     }
