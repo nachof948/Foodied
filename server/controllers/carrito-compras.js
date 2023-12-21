@@ -1,10 +1,23 @@
 const Compra = require('../models/Compra')
 const Comidas= require('../models/Comidas')
 const mongoose = require('mongoose')
+const jwt = require('jsonwebtoken')
+require('dotenv').config()
+
 const mostrarCarrito= async(req, res) => { 
     try{
-        if(req.user){
-            const carritoUsuario = await Compra.find({usuario: req.user._id})
+        const authotization = req.get('authorization')
+        let token = null
+        if(authotization && authotization.toLowerCase().startsWith('bearer')){
+            token = authotization.substring(7)
+        }
+        const decodedToken = jwt.verify(token, process.env.SECRET_KEY)
+        if(!token || !decodedToken.id){
+            return res.status(401).json({error: 'Token invalido'})
+        }
+        const usuarioId = decodedToken.id
+        if(usuarioId){
+            const carritoUsuario = await Compra.find({usuario: usuarioId })
             /* Si el usuario tiene elementos en su carrito, se muestra la "notificacion" */
             if(carritoUsuario && carritoUsuario.length > 0){
                 res.send({carrito:carritoUsuario, user:req.user})
@@ -26,14 +39,23 @@ const mostrarCarrito= async(req, res) => {
 const agregarProductos = async (req, res) => {
     const productoId = req.body.productoId; // Se recibe el ID del producto a agregar
     try {
-        const usuarioId = req.user._id;
+        const authotization = req.get('authorization')
+        let token = null
+        if(authotization && authotization.toLowerCase().startsWith('bearer')){
+            token = authotization.substring(7)
+        }
+        const decodedToken = jwt.verify(token, process.env.SECRET_KEY)
+        if(!token || !decodedToken.id){
+            return res.status(401).json({error: 'Token invalido'})
+        }
+        const usuarioId = decodedToken.id
 
         // Buscamos el carrito del usuario
         let carritoUsuario = await Compra.findOne({ usuario: usuarioId });
 
         // Si el usuario no tiene un carrito, creamos uno nuevo para el mismo
-        if (!carritoUsuario) {
-            carritoUsuario = new Compra({ usuario: usuarioId, items: [] });
+        if(!carritoUsuario){
+            carritoUsuario = await Compra.create({ usuario:usuarioId, items:[]})
         }
 
         // Buscamos el producto por su ID
@@ -71,7 +93,18 @@ const sumarProductos = async (req, res) => {
     const productoId = req.body.id;
     try {
         /* Tomamos el ID del usuario */
-        const usuarioId = req.user._id;
+        /* Tomamos el ID del usuario */
+        const authorization = req.get('authorization'); //Recupera la cabecera
+        let token = null
+        if(authorization && authorization.toLowerCase().startsWith('bearer')){
+            token = authorization.substring(7)
+        }
+        
+        const decodedToken = jwt.verify(token, process.env.TOKEN)
+        if(!token || !decodedToken.id){
+            return res.status(401).json({error:'Token invalido'})
+        } 
+        const usuarioId = decodedToken.id;
 
         /* Buscamos el carrito del usuario */
         let compraUsuario = await Compra.findOne({ usuario: usuarioId });
@@ -100,7 +133,18 @@ const restarProductos = async (req, res) => {
     const productoId = req.body.id;
     try {
         /* Tomamos el ID del usuario */
-        const usuarioId = req.user._id;
+         /* Tomamos el ID del usuario */
+         const authorization = req.get('authorization'); //Recupera la cabecera
+         let token = null
+         if(authorization && authorization.toLowerCase().startsWith('bearer')){
+             token = authorization.substring(7)
+         }
+         
+         const decodedToken = jwt.verify(token, process.env.TOKEN)
+         if(!token || !decodedToken.id){
+             return res.status(401).json({error:'Token invalido'})
+         } 
+         const usuarioId = decodedToken.id;
 
         /* Buscamos el carrito del usuario */
         let compraUsuario = await Compra.findOne({ usuario: usuarioId });
@@ -150,9 +194,20 @@ const restarProductos = async (req, res) => {
 /* ELIMINAR PRODUCTO DEL CARRITO */
 const eliminarProductos = async (req, res) => {
     const id = req.params.id;
-    const usuarioId = req.user._id;
 
     try {
+         /* Tomamos el ID del usuario */
+         const authorization = req.get('authorization'); //Recupera la cabecera
+         let token = null
+         if(authorization && authorization.toLowerCase().startsWith('bearer')){
+             token = authorization.substring(7)
+         }
+         
+         const decodedToken = jwt.verify(token, process.env.TOKEN)
+         if(!token || !decodedToken.id){
+             return res.status(401).json({error:'Token invalido'})
+         } 
+         const usuarioId = decodedToken.id;
         const carritoUsuario = await Compra.findOneAndUpdate(
             { usuario: usuarioId },
             { $pull: { items: { _id: id } } },
