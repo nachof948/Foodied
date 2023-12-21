@@ -32,7 +32,7 @@ const Header = ({usuarioLogueado, username}) => {
         <div className="header-derecha">
           <div className="header-iconos">
             <Lupa />
-            <CarritoDeCompras />
+            <CarritoDeCompras usuarioLogueado={usuarioLogueado} />
           </div>
           <Registrarse usuarioLogueado={usuarioLogueado} username={username} />
         </div>

@@ -1,9 +1,14 @@
 import React from 'react';
 
-const CarritoDeCompras = () => {
+const CarritoDeCompras = ({usuarioLogueado}) => {
   return(
     <div>
-      <a href="/compras"><i className="bi bi-cart"></i></a>
+      {usuarioLogueado ? (
+        <a href="/compras"><i className="bi bi-cart"></i></a>
+      ):(
+        <a href="/auth/signup"><i className="bi bi-cart"></i></a>
+      )}
+      
     </div>
   )
 }
