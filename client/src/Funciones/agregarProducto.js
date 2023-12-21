@@ -1,10 +1,10 @@
 import axios from 'axios';
-const agregarAlCarrito = (productoId,token,navegar) => {
+const agregarAlCarrito = (productoId,navegar) => {
   // Realizar una solicitud al servidor para agregar el producto al carrito por su ID
     axios.post('https://foodied-server.vercel.app/compras/agregar', { productoId },{
-      headers:{
+/*       headers:{
         Authorization:`Bearer ${token}`
-      }
+      } */
     })
       .then(() => {
         navegar('/compras')
