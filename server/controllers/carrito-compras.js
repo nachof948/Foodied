@@ -6,7 +6,7 @@ require('dotenv').config()
 
 const mostrarCarrito= async(req, res) => { 
     try{
-        const authotization = req.get('Authorization')
+        const authotization = req.get('authorization')
         let token = null
         if(authotization && authotization.toLowerCase().startsWith('bearer')){
             token = authotization.substring(7)
@@ -38,7 +38,7 @@ const mostrarCarrito= async(req, res) => {
 /* AGREGAR PRODUCTOS AL CARRITO */
 const agregarProductos = async (req, res) => {
     const productoId = req.body.productoId; // Se recibe el ID del producto a agregar
-    const authotization = req.get('Authorization')
+    const authotization = req.get('authorization')
         let token = null
         if(authotization && authotization.toLowerCase().startsWith('bearer')){
             token = authotization.substring(7)
@@ -90,7 +90,7 @@ const agregarProductos = async (req, res) => {
 
 const sumarProductos = async (req, res) => {
     const productoId = req.body.id;
-    const authorization = req.get('Authorization'); //Recupera la cabecera
+    const authorization = req.get('authorization'); //Recupera la cabecera
     let token = null
     if(authorization && authorization.toLowerCase().startsWith('bearer')){
         token = authorization.substring(7)
@@ -130,7 +130,7 @@ const sumarProductos = async (req, res) => {
 
 const restarProductos = async (req, res) => {
     const productoId = req.body.id;
-    const authorization = req.get('Authorization'); //Recupera la cabecera
+    const authorization = req.get('authorization'); //Recupera la cabecera
          let token = null
          if(authorization && authorization.toLowerCase().startsWith('bearer')){
              token = authorization.substring(7)
