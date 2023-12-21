@@ -39,7 +39,7 @@ const Carrito = ({ usuarioLogueado, username, token }) => {
   
   const restarProducto = async (productoId) => {
     try {
-      await axios.post('https://foodied-server.vercel.app/compras/restar', { id: productoId, token },{
+      await axios.post('https://foodied-server.vercel.app/compras/restar', { id: productoId },{
         headers:{
           Authorization:`Bearer ${token}`,
           'Content-Type': 'application/json'
@@ -78,7 +78,7 @@ const Carrito = ({ usuarioLogueado, username, token }) => {
 
   const sumarProducto = async (productoId) => {
     try {
-      await axios.post('https://foodied-server.vercel.app/compras/sumar', { id: productoId, token },{
+      await axios.post('https://foodied-server.vercel.app/compras/sumar', { id: productoId },{
         headers:{
           Authorization:`Bearer ${token}`,
           'Content-Type': 'application/json'
@@ -150,7 +150,7 @@ const Carrito = ({ usuarioLogueado, username, token }) => {
   }
   return (
     <div>
-      <HeaderShop usuarioLogueado={usuarioLogueado} username={username} />
+      <HeaderShop usuarioLogueado={usuarioLogueado} username={username} token={token} />
       <section className='section-carrito'>
         {loading ? (
           <div className="spinner"></div>
