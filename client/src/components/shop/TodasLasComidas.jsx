@@ -8,7 +8,7 @@ import { mirarProducto } from '../../Funciones/mirarProducto';
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 
-const TodasLasComidas = ({usuarioLogueado, username}) => {
+const TodasLasComidas = ({usuarioLogueado, username, token}) => {
   const [loading, setLoading] = useState(true)
   const navegar = useNavigate()
   
@@ -56,7 +56,7 @@ const TodasLasComidas = ({usuarioLogueado, username}) => {
                   <div className="opciones-comprar">
                         <p>${precio}</p>
                         {usuarioLogueado ? (
-                          <button className='comprar-producto' onClick={()=>{agregarAlCarrito(_id, navegar)}}>Comprar Ahora</button>
+                          <button className='comprar-producto' onClick={()=>{agregarAlCarrito(_id, token ,navegar)}}>Comprar Ahora</button>
                         ) : (
                           <a className='comprar-producto' href='/auth/registrarse'>Comprar Ahora</a>
                         )}
