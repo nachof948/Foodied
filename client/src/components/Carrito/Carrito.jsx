@@ -11,7 +11,7 @@ const Carrito = ({ usuarioLogueado, username, token }) => {
   const navegar = useNavigate()
   const [loading, setLoading] = useState(true)
   useEffect(() => {
-    axios.get('https://foodied-server-nacho-fernandezs-projects.vercel.app/compras',{
+    axios.get('https://foodied-server.vercel.app/compras',{
       headers:{
         Authorization:`Bearer ${token}`
       }
@@ -36,9 +36,9 @@ const Carrito = ({ usuarioLogueado, username, token }) => {
       });
       window.scrollTo({ top: 0, behavior: 'auto' });
   }, []);
-  const restarProducto = async (productoId) => {
+  const restarProducto = async (productoId, token) => {
     try {
-      await axios.post('https://foodied-server-nacho-fernandezs-projects.vercel.app/compras/restar', { id: productoId },{
+      await axios.post('https://foodied-server.vercel.app/compras/restar', { id: productoId },{
         headers:{
           Authorization:`Bearer ${token}`
         }
@@ -74,9 +74,9 @@ const Carrito = ({ usuarioLogueado, username, token }) => {
   };
   
 
-  const sumarProducto = async (productoId) => {
+  const sumarProducto = async (productoId, token) => {
     try {
-      await axios.post('https://foodied-server-nacho-fernandezs-projects.vercel.app/compras/sumar', { id: productoId },{
+      await axios.post('https://foodied-server.vercel.app/compras/sumar', { id: productoId },{
         headers:{
           Authorization:`Bearer ${token}`
         }
@@ -104,8 +104,8 @@ const Carrito = ({ usuarioLogueado, username, token }) => {
     }
   };
     
-  const eliminarProducto = (id) => {
-    axios.delete(`https://foodied-server-nacho-fernandezs-projects.vercel.app/compras/eliminar/${id}`,{
+  const eliminarProducto = (id, token) => {
+    axios.delete(`https://foodied-server.vercel.app/compras/eliminar/${id}`,{
       headers:{
         Authorization:`Bearer ${token}`
       }
@@ -132,8 +132,8 @@ const Carrito = ({ usuarioLogueado, username, token }) => {
         console.log(error);
       });
   };
-  const comprarProducto = ()=>{
-    axios.delete('https://foodied-server-nacho-fernandezs-projects.vercel.app/compra-realizada',{
+  const comprarProducto = (token)=>{
+    axios.delete('https://foodied-server.vercel.app/compra-realizada',{
       headers:{
         Authorization:`Bearer ${token}`
       }
