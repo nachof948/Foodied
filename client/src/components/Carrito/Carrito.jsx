@@ -3,6 +3,7 @@ import { HeaderShop, Footer } from '../../indice';
 import axios from 'axios';
 import './Hoja de estilos/Carrito.css';
 import { useNavigate } from 'react-router-dom';
+import { sumarProducto } from '../../Funciones/sumarProducto';
 
 
 const Carrito = ({ usuarioLogueado, username, token }) => {
@@ -74,9 +75,11 @@ const Carrito = ({ usuarioLogueado, username, token }) => {
       console.log(error);
     }
   };
-  
+  const manejarSuma = async()=>{
+    await sumarProducto(_id, token, carrito, setCarrito, setTotal)
+  }
 
-  const sumarProducto = async (productoId) => {
+/*   const sumarProducto = async (productoId) => {
     try {
       await axios.post('https://foodied-server.vercel.app/compras/sumar', { id: productoId },{
         headers:{
@@ -104,7 +107,7 @@ const Carrito = ({ usuarioLogueado, username, token }) => {
     } catch (error) {
       console.log(error);
     }
-  };
+  }; */
     
   const eliminarProducto = (id) => {
     axios.delete(`https://foodied-server.vercel.app/compras/eliminar/${id}`,{
@@ -172,7 +175,7 @@ const Carrito = ({ usuarioLogueado, username, token }) => {
                         <img src={imagen} alt={nombre} width={"100px"} />
                         <button className="comprar-ahora agregar" type="submit" onClick={() => restarProducto(_id)}>-</button>
                         <p className="product-quantity">{cantidad}</p>
-                        <button className="comprar-ahora agregar" onClick={() => sumarProducto(_id)}>+</button>
+                        <button className="comprar-ahora agregar" onClick={manejarSuma}>+</button>
                         <p>$ {precio}</p>
                         <button className='eliminar' onClick={() => eliminarProducto(_id)}>Eliminar</button>
                       </div>
