@@ -11,7 +11,11 @@ const Carrito = ({ usuarioLogueado, username, token }) => {
   const navegar = useNavigate()
   const [loading, setLoading] = useState(true)
   useEffect(() => {
-    axios.get('https://foodied-server.vercel.app/compras')
+    axios.get('https://foodied-server.vercel.app/compras',{
+      headers:{
+        Authorization:`Bearer ${token}`
+      }
+    })
       .then((response) => {
         const delay = setTimeout(() => {
           setLoading(false); // Actualiza el estado de carga después del tiempo de espera
