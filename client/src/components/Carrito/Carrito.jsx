@@ -38,7 +38,6 @@ const Carrito = ({ usuarioLogueado, username, token }) => {
   }, []);
   
   const restarProducto = async (productoId) => {
-    console.log(token)
     try {
       await axios.post('https://foodied-server.vercel.app/compras/restar', { id: productoId },{
         headers:{
@@ -46,7 +45,6 @@ const Carrito = ({ usuarioLogueado, username, token }) => {
           'Content-Type': 'application/json'
         }
       });
-      console.log(token)
       const updatedCarrito = carrito.map((item) => {
         const updatedItems = item.items.map((producto) => {
           if (producto._id === productoId) {
@@ -77,7 +75,7 @@ const Carrito = ({ usuarioLogueado, username, token }) => {
   };
   
 
-  const sumarProducto = async (productoId, token, carrito, setCarrito, setTotal) => {
+  const sumarProducto = async (productoId, token) => {
     try {
       await axios.post('https://foodied-server.vercel.app/compras/sumar', { id: productoId },{
         headers:{
@@ -173,7 +171,7 @@ const Carrito = ({ usuarioLogueado, username, token }) => {
                         <img src={imagen} alt={nombre} width={"100px"} />
                         <button className="comprar-ahora agregar" type="submit" onClick={() => restarProducto(_id)}>-</button>
                         <p className="product-quantity">{cantidad}</p>
-                        <button className="comprar-ahora agregar" onClick={() => sumarProducto(_id, token, carrito, setCarrito, setTotal)}>+</button>
+                        <button className="comprar-ahora agregar" onClick={() => sumarProducto(_id, token)}>+</button>
                         <p>$ {precio}</p>
                         <button className='eliminar' onClick={() => eliminarProducto(_id)}>Eliminar</button>
                       </div>
