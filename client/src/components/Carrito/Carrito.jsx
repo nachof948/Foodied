@@ -76,13 +76,14 @@ const Carrito = ({ usuarioLogueado, username, token }) => {
   
 
   const sumarProducto = async (productoId, token) => {
+    console.log(token)
     try {
       await axios.post('https://foodied-server.vercel.app/compras/sumar', { id: productoId },{
         headers:{
           Authorization:`Bearer ${token}`
         }
       });
-        console.log(token)
+        
       const updatedCarrito = carrito.map((item) => {
         const updatedItems = item.items.map((producto) => {
           if (producto._id === productoId) {
