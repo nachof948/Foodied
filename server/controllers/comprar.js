@@ -8,7 +8,7 @@ const compra = async(req,res)=>{
              token = authorization.substring(7)
          }
          
-         const decodedToken = jwt.verify(token, process.env.TOKEN)
+         const decodedToken = jwt.verify(token, process.env.SECRET_KEY)
          if(!token || !decodedToken.id){
              return res.status(401).json({error:'Token invalido'})
          } 
