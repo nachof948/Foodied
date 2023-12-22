@@ -75,7 +75,7 @@ const Carrito = ({ usuarioLogueado, username, token }) => {
       console.log(error);
     }
   };
-  const manejarSuma = async()=>{
+  const manejarSuma = async(_id)=>{
     await sumarProducto(_id, token, carrito, setCarrito, setTotal)
   }
 
@@ -175,7 +175,7 @@ const Carrito = ({ usuarioLogueado, username, token }) => {
                         <img src={imagen} alt={nombre} width={"100px"} />
                         <button className="comprar-ahora agregar" type="submit" onClick={() => restarProducto(_id)}>-</button>
                         <p className="product-quantity">{cantidad}</p>
-                        <button className="comprar-ahora agregar" onClick={manejarSuma}>+</button>
+                        <button className="comprar-ahora agregar" onClick={()=>manejarSuma(_id)}>+</button>
                         <p>$ {precio}</p>
                         <button className='eliminar' onClick={() => eliminarProducto(_id)}>Eliminar</button>
                       </div>
