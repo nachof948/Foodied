@@ -8,7 +8,6 @@ const CarritoDeCompras = ({usuarioLogueado}) => {
       ):(
         <a href="/auth/signup"><i className="bi bi-cart"></i></a>
       )}
-      
     </div>
   )
 }

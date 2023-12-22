@@ -22,7 +22,7 @@ const MenuResponsive = ({usuarioLogueado, username}) => {
       <div className="header-derecha-responsive">
           <div className="header-iconos">
             <Lupa />
-            <CarritoDeCompras />
+            <CarritoDeCompras usuarioLogueado={usuarioLogueado} />
           </div>
           <Registrarse usuarioLogueado={usuarioLogueado} username={username} />
         </div>
