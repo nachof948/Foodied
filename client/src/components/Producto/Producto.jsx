@@ -5,7 +5,7 @@ import { HeaderShop, Footer } from '../../indice'
 import { agregarAlCarrito } from '../../Funciones/agregarProducto';
 import './Hoja de estilos/Producto.css'
 
-const Producto = ({usuarioLogueado, username}) => {
+const Producto = ({usuarioLogueado, username, token}) => {
   const params = useParams()
   const [nombre, setNombre] = useState('')
   const [img, setImg] = useState('')
@@ -79,7 +79,7 @@ const Producto = ({usuarioLogueado, username}) => {
                   <p className='precio-producto'>${precio}</p>
                   <p className='descripcion-extensa-producto'>{descripcionExtensa}</p>
                   {usuarioLogueado ? (
-                      <button className='comprar-producto' onClick={()=>{agregarAlCarrito(productoId, navegar)}}>Comprar Ahora</button>
+                      <button className='comprar-producto' onClick={()=>{agregarAlCarrito(productoId,token ,navegar)}}>Comprar Ahora</button>
                   ) : (
                     <a className='comprar-producto' href='/auth/registrarse'>Comprar Ahora</a>
                   )}
