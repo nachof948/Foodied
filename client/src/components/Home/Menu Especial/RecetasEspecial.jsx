@@ -43,7 +43,7 @@ const RecetasEspecial = ({usuarioLogueado, token}) => {
           {usuarioLogueado ? (
             <button className='comprar-ahora bolsa' onClick={()=>{agregarAlCarrito(_id, token ,navegar)}}><img src="/Imagenes/icons8-bolsa-de-compras-45.png" alt="Bolsa" /></button>
             ) : (
-              <a className='comprar-ahora bolsa' href='/auth/registrarse'><img src="/Imagenes/icons8-bolsa-de-compras-45.png" alt="Bolsa" /></a>
+              <a className='comprar-ahora bolsa' href='/auth/signup'><img src="/Imagenes/icons8-bolsa-de-compras-45.png" alt="Bolsa" /></a>
             )}
           </div>
           

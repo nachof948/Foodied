@@ -81,7 +81,7 @@ const Producto = ({usuarioLogueado, username, token}) => {
                   {usuarioLogueado ? (
                       <button className='comprar-producto' onClick={()=>{agregarAlCarrito(productoId,token ,navegar)}}>Comprar Ahora</button>
                   ) : (
-                    <a className='comprar-producto' href='/auth/registrarse'>Comprar Ahora</a>
+                    <a className='comprar-producto' href='/auth/signup'>Comprar Ahora</a>
                   )}
                 </div>
               </section>
