@@ -389,6 +389,9 @@
 /* ====FIN TABLET===== */
 /* ===CELULAR=== */
 @media (max-width:768px) {
+    .comida-habitual{
+        width: 97vw;
+    }
     .contenedor-comida-habitual{
         width: 95vw;
     }

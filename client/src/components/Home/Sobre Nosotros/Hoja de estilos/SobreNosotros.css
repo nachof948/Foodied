@@ -6,11 +6,7 @@
     padding-top: 3rem;
     margin: 0 auto;
     position: relative;
-}
-.hoja-chef{
-    position: absolute;
-    right: 0.75rem;
-    top: -5rem;
+    overflow-x: hidden;
 }
 .contenedor-chefs{
     width: 85vw;
@@ -246,26 +242,30 @@
         align-items: center;
     }
     .uno{
-        width: 24rem;
-        height: 30rem;
+        width: 50vw;
+        height: 32rem;
         margin-bottom: -5rem;
     }
     .dos{
-        width: 20rem;
-        height: 33rem;
+        width: 49vw;
+        height: 36rem;
+        padding: 0rem 0.5rem;
     }
     
     .tres{
-        width: 23.3rem;
-        height: 32rem;
+        width: 50vw;
+        height: 33rem;
     }
 }
 /* === FIN TABLET==== */
 
 /* =====CELULAR======= */
 @media (max-width:768px) {
-    .contenedor-chefs{
+    .chefs{
         width: 95vw;
+    }
+    .contenedor-chefs{
+        width: 90vw;
     }
     .chefs{
         padding-top: 0rem;
@@ -291,17 +291,17 @@
         font-size: 0.9rem;
     }
     .uno{
-        width: 21rem;
+        width: 70vw;
         height: 27rem;
         margin-bottom: -5rem;
     }
     .dos{
-        width: 17rem;
+        width: 68vw;
         height: 29rem;
     }
     
     .tres{
-        width: 20rem;
+        width: 69vw;
         height: 29rem;
     }
 }
@@ -314,32 +314,25 @@
         font-size: 0.9rem;
     }
     .uno{
-        width: 18rem;
         height: 26rem;
         margin-bottom: -5rem;
     }
     .dos{
-        width: 14rem;
         height: 26rem;
     }
     
     .tres{
-        width: 17rem;
         height: 26rem;
     }
 }
 @media (max-width:320px) {
     .uno{
-        width: 17rem;
         height: 24rem;
     }
     .dos{
-        width: 13rem;
         height: 26rem;
     }
-    
     .tres{
-        width: 16rem;
         height: 24rem;
     }
 }

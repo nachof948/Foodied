@@ -527,6 +527,9 @@
 
 /* ====CELULAR==== */
 @media (max-width:768px) {
+    .comida-especial{
+        width: 97vw;
+    }
     .comida-especial-contenedor{
         width: 95vw;
         justify-content: center;

@@ -282,6 +282,9 @@
 /* ==== FIN TABLET===== */
 /* ====CELULAR===== */
 @media (max-width:768px) {
+    .elegirnos{
+        width: 97vw;
+    }
     .contenedor-elegirnos{
         width: 95vw;
     }

@@ -413,6 +413,7 @@
 @media (max-width:768px) {
     .hero{
         background:none;
+        width: 97vw;
     }
     .textos-hero{
         align-items: center;

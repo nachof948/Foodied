@@ -307,6 +307,9 @@
 
 /* ===CELULAR=== */
 @media (max-width:768px) {
+    .seccion-opciones{
+        width: 97vw;
+    }
     .contenedor-opciones{
         width: 95vw;
     }
