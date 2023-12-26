@@ -263,7 +263,7 @@ nav a:hover{
         height: fit-content;
     }
     .menu-responsive{
-        display: block;
+        display: flex;
         cursor: pointer;
     }
     .logout{
