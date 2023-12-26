@@ -128,7 +128,7 @@
     .imagen-registro{
         flex-basis: 0%;
         width: 100vw;
-        padding: 0.5rem;
+        padding: 0.5rem 0rem;
         background-color: rgb(131,182,77);
     }
 }
