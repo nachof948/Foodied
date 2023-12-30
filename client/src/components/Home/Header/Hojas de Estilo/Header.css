@@ -75,7 +75,7 @@ nav a:hover{
     color: var(--verde-claro);
 }
 .menu-responsive{
-    visibility: hidden;
+    display: none;
     background-color: transparent;
     color: #F9FAFC;
     font-size: 3rem;
@@ -263,7 +263,7 @@ nav a:hover{
         height: fit-content;
     }
     .menu-responsive{
-        visibility: visible;
+        display: flex;
         cursor: pointer;
     }
     .logout{
