@@ -26,6 +26,7 @@ app.use(
 
 
 
+
 //Configuración del formulario
 app.use(express.json())
 app.use(express.urlencoded({extended:false}))

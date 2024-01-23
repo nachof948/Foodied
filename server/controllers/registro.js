@@ -12,7 +12,8 @@ const signup = async (req, res) =>{
         await nuevoUsuario.save()
         res.status(201).send('Te has registardo correctamente')
     } catch(err){
-        res.status(500).send('Error al registrarse')
+        console.log(err)
+        res.status(500).send('Error al registrarse',err)
     }
 }
 
@@ -26,12 +27,12 @@ const obtenerUsuarios = async (req, res) =>{
 }
 
 const login = async (req, res) => {
+    const { email, password } = req.body
     try {
-        const { username, password } = req.body
-        const encontrarUsuario = await UsuarioFormulario.findOne({ username })
+        const encontrarUsuario = await UsuarioFormulario.findOne({email})
         
         if (!encontrarUsuario) {
-            return res.status(401).send('Este usuario no está registrado o el nombre de usuario es incorrecto')
+            return res.status(401).send('Este email no está registrado o el mismo es incorrecto')
         }
         
         const validarPassword = await bcrypt.compare(password, encontrarUsuario.password)
@@ -40,11 +41,6 @@ const login = async (req, res) => {
             return res.status(401).send('Contraseña incorrecta')
         }
 
-        // Verificamos si el usuario tiene un carrito, si no lo tiene, lo creamos
-       /*  let carritoUsuario = await Compra.findOne({ usuario: encontrarUsuario._id });
-        if (!carritoUsuario) {
-            carritoUsuario = await Compra.create({ usuario: encontrarUsuario._id, items: [] });
-        } */
         const userForToken={
             id: encontrarUsuario._id,
             username: encontrarUsuario.username
@@ -55,10 +51,9 @@ const login = async (req, res) => {
             username:encontrarUsuario.username,
             token
         })
-        console.log(username, token)
         
     } catch (err) {
-        res.status(500).send('Error al loguearse')
+        res.status(500).send('Error al loguearse',err)
     }
 }
 
