@@ -22,41 +22,35 @@ const Opciones = ({usuarioLogueado, token}) => {
     
   },[])  
   
-
-  return(
-    <section id='opciones' className='seccion-opciones' >
-      <div className='contenedor-opciones'>
-        {loading ? (
-          <div className="spinner" style={{margin:"0 auto"}}></div>
-        ):(
-          opciones.slice(0, 4).map(opcion =>{
-            const {nombre, descripcion, precio,imgUrl, _id} = opcion
-            return(
+    return (
+      <section id='opciones' className='seccion-opciones'>
+        <div className='contenedor-opciones'>
+          {opciones.slice(0,4).map(comida => {
+            const { nombre, descripcion, precio, imgUrl, _id } = comida;
+            return (
               <div key={_id}>
-              <div className='tarjeta tarjeta-producto' onClick={()=>{mirarProducto(_id, navegar)}} > 
-                <img src={imgUrl} alt={nombre} loading="lazy" />
-                <div className="tarjeta-textos">
-                  <h2>{nombre}</h2>
-                  <p>{descripcion}</p>
-                  
+                <div className='tarjeta tarjeta-producto' onClick={() => { mirarProducto(_id, navegar) }}>
+                  <img src={imgUrl} alt={nombre} loading="lazy" />
+                  <div className="tarjeta-textos">
+                    <h2>{nombre}</h2>
+                    <p>{descripcion}</p>
+                  </div>
+                </div>
+                <div className="opciones-comprar">
+                  <p>${precio}</p>
+                  {usuarioLogueado ? (
+                    <button className='comprar-producto' onClick={() => { agregarAlCarrito(_id, token, navegar) }}>Comprar Ahora</button>
+                  ) : (
+                    <a className='comprar-producto' href='/auth/signup'>Comprar Ahora</a>
+                  )}
                 </div>
               </div>
-              <div className="opciones-comprar">
-                    <p>${precio}</p>
-                    {usuarioLogueado ? (
-                        <button className='comprar-producto' onClick={()=>{agregarAlCarrito(_id, token ,navegar)}}>Comprar Ahora</button>
-                    ) : (
-                      <a className='comprar-producto' href='/auth/signup'>Comprar Ahora</a>
-                    )}
-                  </div>
-              </div> 
-            )
-          })
-        )}
-        
-      </div>
-    </section>
-  )
+            );
+          })}
+        </div>
+      </section>
+    );
 }
+
 
 export { Opciones }

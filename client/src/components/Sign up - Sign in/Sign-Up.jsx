@@ -4,19 +4,20 @@ import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2'
 import './Hoja de estilos/SignUp.css'
+import { useForm } from 'react-hook-form';
 
 
 
 const SignUp = () => {
-  const [email, setEmail] = useState('')
-  const [username, setUsername] = useState('')
-  const [password, setPassword] = useState('')
+  const { register, formState: { errors }, handleSubmit }=useForm({
+    mode: 'all'
+  })
   const navegar = useNavigate()
+  const [error, setError]= useState(false)
 
   
-  const manejarRegistro = (event) => {
-    event.preventDefault()
-    axios.post('https://foodied-server.vercel.app/auth/signup',{email, username, password})
+  const manejarRegistro = (values) => {
+    axios.post('https://foodied-server.vercel.app/auth/signup', values)
     .then(() =>{
       Swal.fire({
         position: "center",
@@ -25,11 +26,11 @@ const SignUp = () => {
         showConfirmButton: false,
         timer: 1500
       });
-      setEmail('')
-      setUsername('')
-      setPassword('')
       navegar('/auth/signin')
     }).catch((error) => {
+      if(error.response && error.response.status === 500){
+        setError(true)
+      }
       console.log(error)
     })
   }
@@ -37,25 +38,36 @@ const SignUp = () => {
   return(
       <div className='registro'>
       <h1>Registarse</h1>
-      <form onSubmit={manejarRegistro}>
-        <input className='input-form' type="email" 
+      <form onSubmit={handleSubmit(manejarRegistro)}>
+        <input 
+        {...register('email', { required: true, pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i })}
+        className='input-form' type="email" 
         name='email' 
-        value={email}
-        onChange={(e)=>setEmail(e.target.value)} 
         placeholder='Email...' />
+        <div style={{display:"flex", justifyContent:"center"}}>
+          {errors.email?.type === 'required' && <p className='error'>El campo email es requerido</p>}
+          {errors.email?.type === 'pattern' && <p className='error'>El correo electrónico no es válido</p>}
+        </div>
 
-        <input className='input-form' type="text" 
+        <input 
+        {...register('username', {required:true})}
+        className='input-form' type="text" 
         name='username' 
-        value={username} 
-        onChange={(e)=>setUsername(e.target.value)} 
-        placeholder='Nombre de usuario...' />
+        placeholder='Nombre de usuario...' 
+        />
+        <div style={{display:"flex", justifyContent:"center"}}>
+          {errors.username?.type === 'required'&& <p className='error'>El campo nombre es requerido</p>}
+        </div>
 
-        <input className='input-form' type="password" 
+        <input {...register('password', {required:true})} 
+        className='input-form' type="password" 
         name='password' 
-        value={password} 
-        onChange={(e)=>setPassword(e.target.value)} 
         placeholder='Contraseña...' />
-        <button className='btn-form' type='submit'>Registarme</button>
+        <div style={{display:"flex", justifyContent:"center"}}>
+          {errors.password?.type === 'required'&& <p className='error'>El campo contraseña es requerido</p>}
+          {error && <p className='error-email' style={{color:"red"}}>Este email o nombre de usuario ya esta registrado</p>}
+        </div>
+        <button className='btn-form' type='submit'>Registrarme</button>
       </form>
       <div className="pregunta">
         <p>Ya tenes una cuenta?</p>
