@@ -65,6 +65,28 @@
 
 /* MEDIA QUERIES NOSOTROS */
 /* ====COMPUTADORA O LAPTOP */
+@media (min-width:2200px) {
+    .texto-chefs h2{
+        font-size: 4rem;
+    }
+    .texto-chefs p{
+        font-size: 1.6rem;
+    }
+    .uno{
+        width: 27.5rem;
+        height: 34rem;
+    }
+    .dos{
+        width: 23rem;
+        height: 36rem;
+    }
+    
+    .tres{
+        width: 28rem;
+        height: 35.5rem;
+    }
+    
+}
 @media (max-width:1750px) {
     .chefs-img{
         gap: 5.6rem;

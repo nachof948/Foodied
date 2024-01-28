@@ -111,6 +111,63 @@
 
 /* MEDIA QUERIES */
 /* ===COMPUTADORA O LAPTOP=== */
+@media (min-width:2100px) {
+    .tarjeta{
+        width: 26rem;
+        height: 26rem;
+    }
+    .tarjeta-textos h2{
+        font-size: 2rem;
+        width: 80%;
+    }
+    .tarjeta-textos p{
+        font-size: 1.3rem;
+        width: 85%;
+    }
+    .opciones-comprar{
+        transform: translateY(-215%);
+    }
+    .opciones-comprar p{
+        font-size: 1.3rem;
+    }
+    .opciones-comprar a,
+    .opciones-comprar button{
+        font-size: 1.4rem;
+    }
+    .tarjeta-textos{
+        transform: translateY(-55%);
+    }
+}
+@media (min-width:2300px) {
+    .tarjeta{
+        width: 30rem;
+        height: 30rem;
+    }
+    .tarjeta-textos h2{
+        font-size: 2.4rem;
+        width: 90%;
+    }
+    .tarjeta-textos p{
+        font-size: 1.5rem;
+        width: 85%;
+    }
+    .opciones-comprar{
+        transform: translateY(-200%);
+    }
+    .opciones-comprar p{
+        font-size: 1.5rem;
+    }
+    .opciones-comprar a,
+    .opciones-comprar button{
+        font-size: 1.6rem;
+    }
+    .tarjeta-textos{
+        transform: translateY(-50%);
+    }
+    .tarjeta img{
+        width: 15rem;
+    }
+}
 @media (max-width:1750px) {
     .tarjeta{
         width: 21rem;

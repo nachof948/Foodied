@@ -41,7 +41,7 @@
 .form-iniciar{
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 3rem;
 }
 .input-form{
     width: 24rem;
@@ -90,6 +90,48 @@
 
 /*==== FIN SIGN-UP - LOG-IN====== */
 /* SECTOR MEDIA-QUERIES */
+@media (min-width:2000px) {
+    /* IMAGEN */
+.imagen-registro{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    background-color: rgb(229,241,217);
+    flex-basis: 40%;
+}
+.imagen-registro h1{
+    font-size: 6rem;
+}
+.imagen-registro img{
+    width: 30rem;
+}
+/* INCIAR SESION CON FORMULARIO */
+.iniciar-sesion{
+    gap: 3rem;
+    margin-bottom: 2.3rem;
+}
+.iniciar-sesion h1{
+    font-size: 6rem;
+}
+.input-form{
+    width: 32rem;
+    padding: 2rem 1.5rem;
+    border-radius: 50px;
+    font-size: 2rem;
+}
+.input-form::placeholder{
+    font-size: 2rem;
+}
+.btn-form{
+    font-size: 2rem;
+    width: 15rem;
+}
+.pregunta{
+    font-size: 1.5rem;
+}
+}
 @media (max-width:1350px) {
     .imagen-registro h1{
         font-size: 3.5rem;

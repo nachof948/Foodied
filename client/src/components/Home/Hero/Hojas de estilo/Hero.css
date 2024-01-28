@@ -190,7 +190,71 @@
 }
 /* MEDIA QUERIES */
 /* ====COMPUTADORA Y LAPTOP===== */
+@media (min-width:2200px) {
+    .hero{
+        background-position: 18rem;
+    }
+}
+@media (min-width:2500px) {
+    .hero{
+        background-position: 20rem;
+    }
+}
+@media (min-width:2600px) {
+    .hero{
+        background-position: 30rem;
+    }
+}
+@media (max-width:2200px) {
+    .hero{
+        background-position: 17rem;
+    }
+}
+@media (max-width:2100px) {
+    .hero{
+        background-position: 10rem;
+    }
+}
+@media (min-width:2100px) {
+    .textos-hero{
+        gap: 3rem;
+    }
+    .textos-hero h1{
+        font-size: 6.3rem;
+    }
+    .textos-hero p{
+        font-size: 1.7rem;
+        width: 70%;
+    }
+    .btn-hero-pregunta{
+        font-size: 1.7rem;
+    }
+    .btns-hero{
+        gap: 2rem;
+    }
+    .btn-hero-izq,
+    .btn-hero-der{
+        font-size: 1.7rem;
+    }
+    .hero-comida-principal{
+        width: 36rem;
+    }
+}
+@media (min-width:2300px){
+    .hero-comida-principal{
+        width: 40rem;
+    }
+}
+@media (max-width:2020px) {
+    .hero{
+        background-position: 7rem;
+        background-size: cover;
+    }
+}
 @media (max-width:1900px) {
+    .hero{
+        background-position: 0rem 0rem;
+    }
     .textos-hero h1{
         font-size: 4.8rem;
     }

@@ -148,6 +148,82 @@
 
 
 /* ==== COMPUTADORA O LAPTOP====== */
+@media (min-width:2200px) {
+    .titulos-habitual h2{
+        font-size: 4rem;
+    }
+    .titulos-habitual p{
+        font-size: 1.6rem;
+    }
+    .comidas{
+        gap: 6.5rem;
+    }
+    .tarjeta-habitual{
+        width: 35rem;
+        height: 32rem;
+    }
+    .tarjeta-habitual-img{
+        transform: translateY(-60%);
+        width: 20rem;
+    }
+    .tarjeta-textos-habitual{
+        transform: translateY(-60%);
+    }
+    .tarjeta-textos-habitual h2{
+        font-size: 2.4rem;
+    }
+    .tarjeta-textos-habitual p{
+        font-size: 1.5rem;
+    }
+    .opciones-comprar-habitual{
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-top: 0.5rem;
+        position: absolute;
+        transform: translate(45%,-150%);
+    }
+    .opciones-comprar-habitual p{
+        font-size: 1.5rem;
+    }
+    .opciones-comprar-habitual a{
+        font-size: 1.4rem;
+    }
+    .opciones-comprar-habitual a:hover{
+        border: 1px solid var(--verde--oscuro);
+        background-color: var(--blanco);
+        color: var(--verde--oscuro);
+        cursor: pointer;
+    }
+    .estrellasHabitual{
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin: 1rem 0rem;
+    }
+    .estrellasHabitual img{
+        width: 1.8rem;
+        height: 1.8rem;
+    }
+    .opciones-comprar-habitual button{
+        border: 1px solid var(--verde--oscuro);
+        border-radius: 20px;
+        padding: 0.5rem 0.8rem;
+        white-space: nowrap;
+        font-size: 1.1rem;
+        font-weight: 400;
+        background-color: var(--verde--oscuro);
+        color: var(--blanco);
+        cursor: pointer;
+        transition: all 250ms ease;
+    }
+    .opciones-comprar-habitual button:hover{
+        border: 1px solid var(--verde--oscuro);
+        background-color: var(--blanco);
+        color: var(--verde--oscuro);
+        cursor: pointer;
+    }
+}
 @media (max-width:1750px) {
     .tarjeta-habitual{
         width: 26rem;

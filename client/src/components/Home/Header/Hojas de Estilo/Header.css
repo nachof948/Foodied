@@ -141,10 +141,38 @@ nav a:hover{
 }
 
 
-/* MEDIA-QUERIES */
-
 /* MEDIA QUERIES HEADER */
 /* ====COMPUTADORA O LAPTOP==== */
+@media (min-width: 1950px) {
+    .empresa{
+        font-size: 3rem;
+    }
+    nav{
+        gap: 8rem;
+    }
+    nav a{
+        font-size: 1.5rem;
+    }
+    .header-iconos a{
+        font-size: 1.5rem;
+    }
+    .registrarse {
+        font-size: 1.5rem;
+    }
+}
+@media (min-width: 2400px) {
+    .empresa{
+        font-size: 3.5rem;
+    }
+    nav{
+        gap: 10rem;
+    }
+    nav a,
+    .header-iconos a,
+    .registrarse{
+        font-size: 1.8rem;
+    }
+}
 @media (max-width:1600px) {
     nav{
         gap: 5rem;
