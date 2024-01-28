@@ -4,11 +4,12 @@ export { Home } from  './components/Home/Home'
 /* HOME-HEADER */
 export { Header } from  './components/Home/Header/Header.jsx'
 export { Logo } from  './components/Home/Header/Logo'
-export { NavBar } from  './components/Home/Header/NavBar'
+export { NavBar } from  './components/Home/Header/NavBar.jsx'
+export { NavBarShop } from './components/Header-Shop/NavBarShop.jsx'
 export { Lupa } from  './components/Home/Header/Lupa'
 export { CarritoDeCompras } from  './components/Home/Header/CarritoDeCompras'
 export { Registrarse } from  './components/Home/Header/Registrarse'
-export { MenuResponsive } from './components/Home/Header/MenuResponsive.jsx'
+export { BurgerButton } from './components/Home/Header/BurgerButton.jsx'
 
 /* HOME-HERO */
 export { Hero } from './components/Home/Hero/Hero'

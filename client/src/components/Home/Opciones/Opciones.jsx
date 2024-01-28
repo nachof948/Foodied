@@ -22,10 +22,13 @@ const Opciones = ({usuarioLogueado, token}) => {
     
   },[])  
   
-    return (
-      <section id='opciones' className='seccion-opciones'>
+  return (
+    <section id='opciones' className='seccion-opciones'>
+      {loading ? (
+        <div className="spinner"></div>
+      ) : (
         <div className='contenedor-opciones'>
-          {opciones.slice(0,4).map(comida => {
+          {opciones.slice(0, 4).map((comida) => {
             const { nombre, descripcion, precio, imgUrl, _id } = comida;
             return (
               <div key={_id}>
@@ -48,9 +51,8 @@ const Opciones = ({usuarioLogueado, token}) => {
             );
           })}
         </div>
-      </section>
-    );
+      )}
+    </section>
+  );
 }
-
-
 export { Opciones }

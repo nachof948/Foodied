@@ -1,6 +1,6 @@
 import React from 'react';
 
-const NavBar = ({userGoogle}) => {
+const NavBar= ({userGoogle}) => {
   return(
     <nav className='nav-pc'>
       <a href="/">Inicio</a>

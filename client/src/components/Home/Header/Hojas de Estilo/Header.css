@@ -17,6 +17,7 @@ header{
     padding: 1rem 0rem;
     position: fixed;
     z-index: 20;
+    display: flex;
 }
 .contenedor-header{
     width: 85vw;
@@ -55,7 +56,12 @@ nav a:hover{
     gap: 2.5rem;
     position: relative;
 }
-
+.contenedor-responsive{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 60vw;
+}
 /* HEADER ICONOS */
 .header-iconos{
     display: flex;
@@ -159,6 +165,9 @@ nav a:hover{
     .registrarse {
         font-size: 1.5rem;
     }
+    .contenedor-responsive{
+        width: 63vw;
+    }
 }
 @media (min-width: 2400px) {
     .empresa{
@@ -172,6 +181,14 @@ nav a:hover{
     .registrarse{
         font-size: 1.8rem;
     }
+    .contenedor-responsive{
+        width: 62vw;
+    }
+}
+@media (max-width:1720px) {
+    .contenedor-responsive{
+        width: 63vw;
+    }
 }
 @media (max-width:1600px) {
     nav{
@@ -182,8 +199,11 @@ nav a:hover{
     nav{
         gap: 4.5rem;
     }
+    .contenedor-responsive{
+        width: 65vw;
+    }
 }
-@media (max-width:1350px) {
+@media (max-width:1360px) {
     nav{
         gap: 3rem;
     }
@@ -229,6 +249,9 @@ nav a:hover{
         right: 1rem;
         padding: 0.8rem 1.7rem;
     }
+    .contenedor-responsive{
+        width: 66vw;
+    }
 }
 @media (max-width:1150px) {
     nav a{
@@ -243,9 +266,7 @@ nav a:hover{
     .header-derecha{
         gap: 2rem;
     }
-    .cerrar-sesion{
-        left: 8.2rem;
-    }
+
     .registrarse {
         font-size: 1rem;
     }
@@ -253,57 +274,72 @@ nav a:hover{
         width: 1.7rem;
         height: 1.7rem;
     }
-    .cerrar-sesion button{
-        top: 3.5rem;
-        right: 1rem;
-        padding: 0.6rem 1.4rem;
-        font-size: 1.1rem;
+    .contenedor-responsive{
+        width: 66vw;
     }
-}
-@media (max-width:1150px) {
     nav{
         gap: 2rem;
     }
 }
+
 /* =====FIN COMPUTADORA O LAPTOP===== */
 /* ====TABLET===== */
 @media (max-width:1024px) {
     header{
         background-color: #83B64D;
     }
-    .nav-pc,
-    .header-derecha,
-    .logo .empresa,
-    .cerrar-sesion button{
-        display: none;
-    }
-    .header-derecha-responsive{
-        display: block;
+    .contenedor-responsive{
         display: flex;
         flex-direction: column;
-        gap: 1rem;
         align-items: center;
+        justify-content: center;
+        gap: 0rem;
+        position: absolute;
+        background-color: #83B64D;
+        border: 1px solid white;
+        right: -32rem;
+        top: 5.2rem;
+        padding: 1rem;
+        width: 20rem;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        transition: all 300ms;
     }
-    .menu-responsivo{
+    .contenedor-responsive.active{
         display: flex;
         flex-direction: column;
-        gap: 1rem;
-        height: fit-content;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        border: 1px solid white;
+        background-color: #83B64D;
+        right: -0.5rem;
+        top: 5.1rem;
+    }
+    nav{
+        flex-direction: column;
+    }
+    .header-iconos{
+        margin-top: 2rem;
+    }
+    .header-derecha{
+        flex-direction: column;
+        align-items: center;
     }
     .menu-responsive{
         display: flex;
         cursor: pointer;
     }
-    .logout{
-        display: flex;
-        justify-content: center;
+    .registrarse{
+        margin-left: 1rem;
     }
     .cerrar-sesion-responsive button{
         display: block;
         background-color: var(--verde-muy-claro);
         border: none;
-        padding: 0.8rem 1.7rem;
+        padding: 0.6rem 1.7rem;
         border-radius: 25px;
+        margin-left: 1.35rem;
         font-size: 1.1rem;
         font-family: 'Roboto', sans-serif; 
         font-weight: 700;
@@ -314,25 +350,12 @@ nav a:hover{
     .cerrar-sesion-responsive:hover button{
         color: var(--verde-claro);
     }
-    .menu-responsive i{
-        font-size: 3.5rem;
-    }
-    .menu-responsive:hover{
-        filter: drop-shadow(2px 2px 5px white);
-    }
     .empresa-responsive{
         display: block;
         font-size: 2rem;
         font-weight: 700;
         position: relative;
         bottom: 0.6rem;
-    }
-    .contenedor-responsive{
-        width: 85vw;
-        display: flex;
-        align-items: baseline;
-        justify-content: space-between;
-        margin: 0 auto;
     }
     .nav-responsive{
         flex-direction: column;
@@ -358,6 +381,9 @@ nav a:hover{
     .header-iconos a{
         font-size: 1rem;
     }
+    .cerrar-sesion button{
+        display: none;
+    }
 }   
     
 
@@ -373,6 +399,19 @@ nav a:hover{
     }
     nav a{
         font-size: 1.2rem;
+    }
+}
+@media (max-width:600px) {
+    .contenedor-responsive.active{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        border: 1px solid white;
+        background-color: #83B64D;
+        right: -0.5rem;
+        width: 15rem;
     }
 }
 @media (max-width:500px) {
@@ -401,6 +440,16 @@ nav a:hover{
         padding: 0.4rem 1.4rem;
         font-size: 0.8rem;
     }
+    .cerrar-sesion-responsive button{
+        padding: 0.4rem 1.5rem;
+        margin-left: 1.25rem;
+        font-size: 1rem;
+    }
+}
+@media (max-width:450px) {
+    .contenedor-responsive.active{
+        width: 12rem;
+    }
 }
 @media (max-width:380px) {
     nav a{
@@ -409,9 +458,6 @@ nav a:hover{
     }
 }
 @media (max-width:330px) {
-    nav{
-        gap: 0.7rem;
-    }
     .btn-sesion{
         font-size: 1.2rem;
     }
