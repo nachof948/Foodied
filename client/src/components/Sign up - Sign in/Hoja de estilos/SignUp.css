@@ -40,7 +40,7 @@
 form{
     display: flex;
     flex-direction: column;
-    gap: 2.5rem;
+    gap: 1.3rem;
 }
 .input-form{
     width: 24rem;
