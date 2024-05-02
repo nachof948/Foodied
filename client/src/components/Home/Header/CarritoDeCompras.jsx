@@ -1,12 +1,13 @@
 import React from 'react';
+import { FaShoppingCart } from "react-icons/fa";
 
 const CarritoDeCompras = ({usuarioLogueado}) => {
   return(
     <div>
       {usuarioLogueado ? (
-        <a href="/compras"><i className="bi bi-cart"></i></a>
+        <a href="/compras"><FaShoppingCart style={{marginRight:'0.1rem'}} /></a>
       ):(
-        <a href="/auth/signup"><i className="bi bi-cart"></i></a>
+        <a href="/auth/signup"><FaShoppingCart style={{marginRight:'0.1rem'}} /></a>
       )}
       
     </div>
